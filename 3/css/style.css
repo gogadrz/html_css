@@ -8,61 +8,62 @@ html {
   box-sizing: inherit;
 }
 
-a {
+.link {
   color: inherit;
   text-decoration: none;
-}
-
-img {
-  max-width: 100%;
 }
 
 body {
   font-family: 'font', sans-serif;
 }
 
-h1 {
+/* мои изменения */
+
+.title {
   margin: 0;
   margin-bottom: 40px;
 }
 
-h2,
-h3 {
-  margin: 0;
+.title__less-margin {
   margin-bottom: 10px;
 }
 
-p {
+.paragraph {
   margin: 0;
   margin-bottom: 40px;
   width: 872px;
 }
 
-ul {
+.content-list {
   padding: 0;
   margin: 0;
   padding-left: 15px;
 }
 
-li {
+.content-list__item {
   margin: 0;
   margin-bottom: 20px;
 }
 
-li:last-child {
+.content-list__item:last-child {
   margin-bottom: 0;
 }
 
-img {
+.image-block {
   margin: 0;
   margin-bottom: 40px;
+  max-width: 100%;
 }
 
-figure {
+.figure-block {
   display: inline-block;
   width: 872px;
   margin: 0;
-  margin-bottom: 40px;
+}
+
+.figure-block .image {
+  padding: 0;
+  max-width: 100%;
 }
 
 .main-content {
@@ -114,5 +115,4 @@ figure {
 .block-radius .paragraph {
   width: 692px;
   margin: 0;
-  margin-bottom: 10px;
 }
