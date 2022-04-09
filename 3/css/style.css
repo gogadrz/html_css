@@ -114,11 +114,12 @@ body {
   margin-bottom: 0;
 }
 
-.block-radius .paragraph {
+.block-radius .block-radius__paragraph {
   width: 692px;
-  margin-bottom: 10;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
-.block-radius .paragraph:last-child {
+.block-radius .block-radius__paragraph:last-child {
   margin-bottom: 0;
 }
