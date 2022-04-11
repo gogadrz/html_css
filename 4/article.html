@@ -11,8 +11,8 @@
 
 <body>
   <div class="container">
-    <h1 class="title">
-      Правила организации отступов: как сделать вёрстку гибкой и не допустить ошибок
+    <h1 class="title title__h1">
+      <strong>Правила организации отступов:</strong> как сделать вёрстку гибкой и не допустить ошибок
     </h1>
     <p class="paragraph">
       Вёрстка должна быть <strong>максимально гибкой</strong>. Даже если заказчик или работодатель говорит, что сайт
@@ -24,32 +24,32 @@
       правила организации отступов. Они позволяют легко менять, улучшать и масштабировать вёрстку и уберегут вас от
       типичных ошибок.
     </p>
-    <div class="block-radius">
-      <h2 class="title title__less-margin">
+    <div class="block-radius decorate-1-bg-image">
+      <h2 class="title title__h2">
         Содержание
       </h2>
-      <p class="block-radius__paragraph">
+      <p class="paragraph block-radius__paragraph">
         Первая из частей - HTML. Это начальная стадия соблюдения кодстайла, ведь любой сайт вы начинаете писать именно с
         этого языка. Давайте посмотрим на основные правила:
       </p>
       <ul class="content-list">
         <li class="content-list__item">
-          <a href="#part1">
+          <a href="#part1" class="context-link">
             Основные принципы работы с отступами
           </a>
         </li>
         <li class="content-list__item">
-          <a href="#part2">
+          <a href="#part2" class="context-link">
             Первый принцип: отступы от предыдущего к следующему
           </a>
         </li>
         <li class="content-list__item">
-          <a href="#part3">
+          <a href="#part3" class="context-link">
             Второй принцип: отступы задаются только между соседями
           </a>
         </li>
         <li class="content-list__item">
-          <a href="#part4">
+          <a href="#part4" class="context-link">
             Третий принцип: у последнего элемента группы обнуляем отступ
           </a>
         </li>
@@ -57,7 +57,7 @@
     </div>
 
     <div id="part1">
-      <h3 class="title title__less-margin">
+      <h3 class="title title__h3">
         Основные принципы работы с отступами
       </h3>
 
@@ -68,13 +68,13 @@
         HTML-коде идти последним из своей группы.
       </p>
 
-      <p class="paragraph">
+      <p class="paragraph paragraph__bright">
         Исходя из этого, можно сразу сформулировать первый принцип.
       </p>
     </div>
 
     <div id="part2">
-      <h3 class="title title__less-margin">
+      <h3 class="title title__h3">
         Отступы задаются от предыдущего элемента к следующему
       </h3>
 
@@ -85,7 +85,7 @@
       </p>
       <figure class="figure-block">
         <img src="img/1.jpg" class="image" alt="Как правильно задавать отступы, — только справа и снизу">
-        <figcaption>
+        <figcaption class="caption">
           На скриншоте видно, как правильно задавать отступы, — только справа и снизу (показано оранжевым)
         </figcaption>
       </figure>
@@ -102,7 +102,7 @@
       </p>
     </div>
     <div id="part3">
-      <h3 class="title title__less-margin">
+      <h3 class="title title__h3">
         Отступы задаются только между соседними элементами в потоке
       </h3>
       <p class="paragraph">
@@ -116,7 +116,7 @@
       </p>
       <figure class="figure-block">
         <img src="img/4.jpg" alt="Выпадение отступов">
-        <figcaption>
+        <figcaption class="caption">
           На скриншоте — выпадение отступов. Отступ есть, но он не увеличивает размер «родителя» с голубым фоном,
           образуя
           лишний отступ — типичную ошибку вёрстки.
@@ -124,7 +124,7 @@
       </figure>
     </div>
     <div id="part4">
-      <h3 class="title title__less-margin">
+      <h3 class="title title__h3">
         Последнему элементу группы нужно обнулять отступ
       </h3>
       <p class="paragraph">
@@ -145,7 +145,7 @@
       </p>
       <img src="img/6.jpg" alt="Чтобы не создавать два селектора, можно написать короче, используя псевдокласс :not."
         class="image-block">
-      <h3 class="title title__less-margin">
+      <h3 class="title title__h3">
         Типичный пример: отступы в карточке
       </h3>
       <p class="paragraph">
@@ -163,11 +163,11 @@
         сделать отступ снизу — для заголовка.
       </p>
     </div>
-    <div class="block-radius">
-      <h2 class="title title__less-margin">
+    <div class="block-radius decorate-2-bg-image">
+      <h2 class="title title__h2">
         Итог
       </h2>
-      <p class="block-radius__paragraph">
+      <p class="paragraph block-radius__paragraph">
         Это основные правила организации отступов, которые помогут вам сделать вёрстку качественной и гибкой. Главное —
         начать им следовать. Со временем их соблюдение войдёт в привычку и вы начнёте сразу понимать, где можно
         допустить
