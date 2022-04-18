@@ -1,25 +1,3 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/RobotoBold.eot');
-  src: local('Roboto Bold'), local('RobotoBold'),
-    url('../fonts/RobotoBold.woff2') format('woff2'),
-    url('../fonts/RobotoBold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/RobotoRegular.eot');
-  src: local('Roboto Regular'), local('RobotoRegular'),
-    url('../fonts/RobotoRegular.woff2') format('woff2'),
-    url('../fonts/RobotoRegular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -65,16 +43,15 @@ body {
   margin: 0 auto;
   width: 1169px;
   max-width: 100%;
-  height: 1477px;
-  max-height: 100%;
   padding-top: 50px;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  padding-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .modules-card-number-position {
   position: absolute;
-  top: 254px;
-  left: 502px;
+  right: 25px;
+  bottom: 25px;
 }
 
 .block {
@@ -103,14 +80,16 @@ body {
 
 .card-list-block {
   position: relative;
-  padding: 0;
+  padding: 205px 25px 25px 25px;
   list-style-type: none;
   display: inline-block;
   width: 572px;
   height: 505px;
   margin: 0;
   margin-bottom: 25px;
-  box-shadow: 1px 1px 20px #e5e5e5;
+  /* box-shadow: 1px 1px 20px #e5e5e5; */
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+  vertical-align: top;
 }
 
 .card-list-block.card-list-block:nth-child(odd) {
@@ -119,14 +98,6 @@ body {
 
 .card-list-block:last-child {
   margin-bottom: 50px;
-}
-
-.card-text-block {
-  position: absolute;
-  top: 180px;
-  padding: 25px;
-  width: 572px;
-  height: 325px;
 }
 
 .paragraph {
@@ -245,14 +216,10 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 21.09px;
-  border: 1px solid #3f2aff;
-  width: 274px;
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 17px 35px;
+  border: 2px solid #3f2aff;
+  background-color: transparent;
+  display: block;
+  padding: 25px 75px;
 }
 
 .image-block {
