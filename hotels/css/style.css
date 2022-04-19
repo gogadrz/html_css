@@ -1,0 +1,127 @@
+.header {
+}
+
+.container {
+  /* position: relative; */
+  width: 1170px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.header-logo {
+  /* margin-right: 40px; */
+  /* display: inline-block; */
+  vertical-align: top;
+}
+
+.header-top {
+  /* position: relative; */
+  /* display: inline-block; */
+  /* vertical-align: top; */
+}
+.contacts-item-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+.header-nav {
+}
+.nav-list {
+}
+.nav-list-item {
+}
+.nav-link {
+}
+.btn {
+}
+.header-btn {
+}
+.main {
+}
+.special-offers {
+}
+.section-title {
+}
+.special-offers-title {
+}
+.section-left {
+}
+.special-offers-section-left {
+}
+.special-offers-list {
+}
+.special-offers-item {
+}
+.special-offers-title-left {
+}
+.special-offers-descr-left {
+}
+.special-offers-link {
+}
+.section-right {
+}
+.special-offers-section-right {
+}
+.special-offers-title-right {
+}
+.special-offers-descr-right {
+}
+.about {
+}
+.about-title {
+}
+.article-description {
+}
+.about-article-description {
+}
+.services {
+}
+.services-title {
+}
+.services-list {
+}
+.services-list-item {
+}
+.services-link {
+}
+.description {
+}
+.description-services-list {
+}
+.advantages {
+}
+.advantages-title {
+}
+.advantages-list {
+}
+.advantages-list-item {
+}
+.advantages-logo {
+}
+.section-desc {
+}
+.advantage-description {
+}
+.accommodation {
+}
+.accommodation-title {
+}
+.accommodation-list {
+}
+.accommodation-list-item {
+}
+.accommodation-content {
+}
+.accommodation-content-left {
+}
+.accommodation-desc {
+}
+.section-desc-bold {
+}
+.accomondation-btn {
+}
+.accommodation-content-right {
+}
+.rating-img {
+}
+.accommodation-link {
+}
