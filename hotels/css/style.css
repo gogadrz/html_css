@@ -9,8 +9,7 @@
 .container {
   width: 1170px;
   margin: 0 auto;
-  padding: 0;
-  padding-top: 30px;
+  padding: 30px 0 20px 0;
 }
 .special-offers-container {
   font-size: 0;
@@ -24,24 +23,26 @@
 
 
 .contacts-phone-link {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 20px;
 }
 
 .header-bottom {
-  box-sizing: border-box;
   position: relative;
+  box-sizing: border-box;
   width: 100%;
   height: 70px;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 0 45px;
+  margin-bottom: 70px;
 }
 .header-bottom-right {
+  display: inline-block;
   position: absolute;
   right: 0;
-  display: inline-block;
   padding-top: 10px;
   vertical-align: middle;
   margin-right: 45px;
@@ -66,7 +67,7 @@
 }
 
 .services-card:last-child {
-  margin-bottom: 0;
+  margin-bottom: 70px;
 }
 
 .contacts-item-link {
@@ -75,29 +76,29 @@
 }
 
 .personal-profile-link {
-  position: absolute;
   display: inline-block;
+  position: absolute;
   top: 17px;
   right: 0;
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   color: #cc9933;
 }
 
 .header-nav {
-  position: relative;
   display: inline-block;
+  position: relative;
   height: 100%;
   vertical-align: top;
 }
 
 .header-vertical-splitter {
-  position: relative;
   display: inline-block;
+  position: relative;
   top: 10px;
 }
 
 .nav-list {
-  /* box-sizing: border-box; */
   position: relative;
   margin: 0;
   padding: 0;
@@ -115,11 +116,13 @@
 }
 
 .nav-link {
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   color: black;
 }
 
 .btn {
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   padding: 13px 20px;
   color: #cc9933;
@@ -133,10 +136,12 @@
 }
 
 .special-offers-card {
+  position: relative;
   box-sizing: border-box;
   width: 573px;
   height: 258px;
   border-radius: 15px;
+  margin: 0 0 70px 0;
 }
 .header-btn {}
 
@@ -146,21 +151,22 @@
 
 .section-title {
   padding-left: 45px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
   line-height: 40px;
+  margin: 0 0 20px 0;
 }
 
 .special-offers-title {
-
+  margin: 0 0 15px 0;
 }
 
 .section-left {
-  color: #ffffff;
   display: inline-block;
+  color: #ffffff;
   vertical-align: top;
   font-size: 0;
-
 }
 
 .special-offers-section-left {
@@ -180,6 +186,7 @@
 .special-offers-title-left {
   margin: 0;
   margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
@@ -187,30 +194,35 @@
 
 .special-offers-descr-left {
   margin: 0;
-  margin-bottom: 47px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 20px;
 }
 
 .special-offers-link {
+  position: absolute;
+  bottom: 40px;
   text-decoration: none;
   color: #ffcc66;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
 }
 
 .section-right {
+  display: inline-block;
+  position: relative;
   box-sizing: border-box;
   width: 573px;
   height: 540px;
-  display: inline-block;
 }
 
 .special-offers-section-right {}
 
 .special-offers-title-right {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 60px;
   font-weight: 700;
   line-height: 60px;
@@ -218,23 +230,30 @@
 }
 
 .special-offers-descr-right {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: 400;
   line-height: 30px;
   color: #ffffff;
+  margin: 0;
 }
 
 .about {}
 
-.about-title {}
+.about-title {
+  margin-bottom: 11px;
+}
 
 .article-description {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
 }
 
-.about-article-description {}
+.about-article-description {
+  margin-bottom: 70px;
+}
 
 .services {}
 
@@ -247,14 +266,15 @@
 }
 
 .services-list-item {
+  display: inline-block;
   box-sizing: border-box;
   list-style-type: none;
-  display: inline-block;
   vertical-align: top;
   padding: 191px 126px 50px 45px;
 }
 
 .services-link {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 40px;
@@ -263,13 +283,21 @@
 }
 
 .description {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
 }
 
-.description-services-list {}
+.description-services-list {
+  margin: 0;
+}
 
+.right_angle_bracket {
+  display: inline;
+  position:relative;
+  top: 3px;
+}
 .advantages {}
 
 .advantages-title {}
@@ -281,15 +309,16 @@
 }
 
 .advantages-list-item {
-  box-sizing: border-box;
   display: inline-block;
+  box-sizing: border-box;
   vertical-align: top;
   width: 275px;
   height: 275px;
   border-radius: 15px;
   background-color: #ffffff;
   margin: 0 23px 23px 0;
-  padding: 40px 42px 41px 45px;;
+  padding: 40px 42px 41px 45px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
@@ -302,7 +331,9 @@
 
 .advantages-list-item:last-child {
   margin-right: 0;
+  margin-bottom: 70px;
 }
+
 .advantages-logo {
   margin-bottom: 10px;
 }
@@ -325,6 +356,7 @@
 
 .accommodation-list-item {
   display: inline-block;
+  position: relative;
   vertical-align: top;
   width: 374px;
   height: 440px;
@@ -338,47 +370,52 @@
   margin-right: 0;
 }
 
+.accommodation-list-item:last-child {
+  margin: 0;
+  height: 440px;
+}
+
 .accommodation-content {
   display: inline-block;
   position: relative;
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
   padding: 253px 10px 16px 45px;
-  /* border: 1px solid brown; */
 }
 
 .accommodation-content-left {
   display: inline-block;
   vertical-align: top;
-  /* border: 1px dotted seagreen; */
 }
 
 .accommodation-desc {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
 }
 
 .section-desc-bold {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 20px;
 }
 
 .accomondation-btn {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
 }
 
 .accommodation-content-right {
-  position: absolute;
   display: inline-block;
-  /* vertical-align: top; */
-  padding-top: 20px;
+  position: absolute;
   right: 46px;
+  padding-top: 20px;
   font-size: 10px;
-  /* border: 1px solid black; */
 
 }
 
@@ -387,7 +424,16 @@
 }
 .rating-img {}
 
-.accommodation-link {}
+.accommodation-link {
+  position: absolute;
+  bottom: 27px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 40px;
+  color: #ffffff;
+}
 
 .sp-offers-img-1 {
   background-image: url("../img/sp-offers-img-1.png");
@@ -406,7 +452,7 @@
 .sp-offers-img-3 {
   background-image: url("../img/sp-offers-img-3.png");
   background-repeat: no-repeat;
-  padding: 40px;
+  padding: 210px 40px 40px;
 
 }
 
