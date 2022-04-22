@@ -1,6 +1,6 @@
-.header {
+/* .header {
 
-}
+} */
 
 .main-container {
   background-color: #e5e5e5;
@@ -244,7 +244,7 @@
   margin-bottom: 11px;
 }
 
-.article-description {
+.about-description {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -252,6 +252,7 @@
 }
 
 .about-article-description {
+  margin: 0;
   margin-bottom: 70px;
 }
 
@@ -339,7 +340,7 @@
 }
 
 .section-desc {
-
+  margin: 0;
 }
 
 .advantage-description {}
@@ -394,6 +395,11 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
+  margin-bottom: 16px;
+}
+
+.accommodation-desc:last-of-type {
+  margin-bottom: 20px;
 }
 
 .section-desc-bold {
