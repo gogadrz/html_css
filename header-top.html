@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      /* font-size: 0; */
+      display: flex;
+      width: 1170px;
+      margin: 0 auto;
+      outline: 1px solid black;
+    }
+
+
+    .image-block {
+      display: inline-block;
+      vertical-align: middle;
+      outline: 1px solid rgb(255, 0, 0);
+      margin-right: 30px;
+    }
+
+    .phone-block {
+      display: inline-block;
+      outline: 1px solid rgb(0, 255, 0);
+    }
+
+    .link-block {
+      display: inline-block;
+      outline: 1px solid yellow;
+
+    }
+    .right-block {
+      display: inline-flex;
+      flex: 1;
+      justify-content: space-between;
+      /* width: calc(100% - 291px); */
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="common image-block">
+      <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="right-block">
+
+      <div class="common phone-block">
+        6-36-32
+      </div>
+      <div class="common link-block vert">
+        <a href="#">comeback</a>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

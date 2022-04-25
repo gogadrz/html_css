@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html {
-            box-sizing: border-box;
+        .raz { /* очистить float */
+            position: relative;
+          display: inline-block;
+          width: 80%;
+          box-sizing: border-box;
+          outline: 1px solid black;
+          vertical-align: top;
+        }
+        .raz div {
+            display: inline-block;
+          float: left;
+          width: 10em;
+          max-width: 100%;
+          min-height: 2em;
+          border: 1px solid rgb(255, 0, 0);
+          background: #fff5d7;
+          vertical-align: top;
+        }
+        .raz div:last-child {
+            display: inline-block;
+            /* vertical-align: top; */
+          float: right;
+          /* clear: left; */
+          background: yellow;
+        }
+        .first {
+            height: 50px;
         }
 
-        *,
-        *::before,
-        *::after {
-            box-sizing: inherit;
+        .second {
+            vertical-align: middle;
         }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        body {
-            /* font-family: Arial, Verdana, sans-serif; */
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        </style>
 </head>
-
 <body>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur id quam repellendus animi ab possimus
-        consequatur numquam, ducimus, quidem obcaecati asperiores excepturi doloribus veniam esse repudiandae veritatis,
-        modi voluptatum quia.</p>
+        <div class="raz">
+          <div class="first">превый блок</div>
+          <div class="second">второй блок</div>
+          <div>третий блок</div>
+          <!-- <div>четвертрый блок</div>
+          <div>пятый блок</div>
+          <div>шестой блок</div> -->
+        </div>
 </body>
-
 </html>
