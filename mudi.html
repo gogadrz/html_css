@@ -1,70 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    h1, h2, h3, h4, h5, h6, p, ul {
-      margin-top: 0;
-    }
-    .list {
-      outline: 1px solid;
-      display: flex;
-      padding-left: 0;
-    }
-    .list-item {
-      outline: 1px solid;
-      list-style-type: none;
-    }
-    .parent {
-      padding: 30px;
-      outline: 1px solid black;
-      display: flex;
-      /* flex-direction: row; */
-      /* align-items: center; */
-      flex-wrap: wrap;
-      /* nowrap, wrap-reverse */
-      justify-content: flex-end;
-    }
-    .child {
-      width: 300px;
-      outline: 1px solid red;
-      background-color: aqua;
-      margin: 0 10px 10px 0;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- <ul class="list">
-    <li class="list-item">первый</li>
-    <li class="list-item">второй</li>
-    <li class="list-item">третий</li>
-  </ul> -->
 
-<div class="parent">
-  <div class="child">
-    Lorem 1 ipsum dolor sit amet consectetur adipisicing elit.
+<body>
+  <div class="container">
+    <div class="parent">
+      <div class="child">
+        1
+      </div>
+      <div class="child">
+        2
+      </div>
+      <div class="child test">
+        3
+      </div>
+      <div class="child test2">
+        4
+      </div>
+      <div class="child">
+        5
+      </div>
+      <div class="child">
+        6
+      </div>
+      <div class="child">
+        7
+      </div>
+    </div>
   </div>
-  <div class="child">
-    Lorem 2
-  </div>
-  <div class="child">
-    psum  3 dolor sit amet consectetur adipisicing elit.
-  </div>
-  <div class="child">
-    Lorem 4
-  </div>
-  <div class="child">
-    Lorem 5
-  </div>
-  <div class="child">
-    Lorem 6
-  </div>
-  <div class="child">
-    Lorem 7
-  </div>
-</div>
 </body>
+
 </html>

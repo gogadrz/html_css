@@ -1,0 +1,37 @@
+.container {
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  padding: 15px 0;
+  outline: 1px solid red;
+}
+
+.parent {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: stretch;
+}
+
+.child {
+  /* width: 100px; */
+  display: flex;
+  flex-basis: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 150px;
+  margin: 10px;
+  padding: 20px;
+  background-color: aqua;
+}
+
+.test {
+  align-self: center;
+  justify-items: flex-end;
+  order: -1;
+  flex-grow: 1;
+}
+
+.test2 {
+  order: 1;
+  flex-shrink: 1;
+}
+
