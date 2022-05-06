@@ -1,0 +1,18 @@
+<form action="https://jsonplaceholder.typicode.com/posts" method="post">
+    <fieldset>
+      <legend>Выбор пола</legend>
+      <label>
+        <input type="radio" name="gender" value="Мужской пол" checked>Мужской пол
+      </label>
+      <label>
+        <input type="radio" name="gender" value="Женский пол">Женский пол
+      </label>
+      <textarea name="message" placeholder="Введите сообщение"></textarea>
+      <select name="city">
+        <option value="Мурманск">Мурманск</option>
+        <option value="Санкт-Петербург">Санкт-Петербург</option>
+        <option value="Москва" disabled>Москва</option>
+      </select>
+      <button type="submit">Отправить</button>
+    </fieldset>
+  </form>

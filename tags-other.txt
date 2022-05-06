@@ -1,0 +1,22 @@
+<base target="_blank"> (расположен в head) все ссылки будут открываться в новом окне
+
+==================
+"Аккордеон"
+<details>
+  <summary>Кто убийца?</summary>
+  Убийца - дворецкий
+</details>
+
+====================
+
+<mark>выделит желтым маркером</mark>
+
+=====================
+
+<blockquote cite="https://skillbox.ru/media/code/kak_pravilno_verstat_html_tablitsy/">
+  <p>
+    здесь какой то текст
+  </p>
+</blockquote>
+
+79 511 898 237
