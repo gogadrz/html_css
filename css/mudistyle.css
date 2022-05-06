@@ -6,11 +6,3 @@ h1, h2, h3, h4, h5, h6, p, ul {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-.main-content {
-  display: flex;
-  min-height: 500px;
-  outline: 1px solid black;
-
-}
-

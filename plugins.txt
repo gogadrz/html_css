@@ -1,7 +1,57 @@
-htmlhint
-editorconfig
-
+Auto Rename Tag
 css navigation
 eCSStractor (Extracting selectors from HTML and generate CSS stylesheet
+EditorConfig Support for Visual Studio Code
+htmlhint
+indent-rainbow
+Live Server
+PostCSS Sorting
+Russian Language Pack
 
+=============================
+Emmet: wrap with abbreviation - обернуть выделенный фрагмент тегом
+шоткат назначил alt-w
+-----------------------------------------------
+preferences: Open Settings (JSON)
+
+{
+    "workbench.startupEditor": "none",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.formatOnSave": true,
+    //     "postcssSorting.config": {
+    //     }
+    // }
+    // {
+    "postcssSorting.config": {
+        "order": [
+            "custom-properties",
+            "dollar-variables",
+            "declarations",
+            "at-rules",
+            "rules"
+        ],
+        "properties-order": [
+            "display",
+            "position",
+            "top",
+            "right",
+            "bottom",
+            "left"
+        ]
+    },
+    "editor.mouseWheelZoom": true,
+    "[css]": {
+        "editor.defaultFormatter": "mrmlnc.vscode-postcss-sorting"
+    },
+    "ecsstractor_port.bem_nesting": true
+}
+
+
+"editor.linkedEditing": true - переименовывать теги парами, вместо auto rename tag
+"editor.mouseWheelZoom": true, - масштаб мышью
+"editor.bracketPairColorization.enabled": true, - помечать цветами отступы
+"editor.guides.bracketPairs": true, - красить парные скобки
+
+"files.trimTrailingWhitespace": true, смахнуть лишние пробелы
+"files.trimFinalNewlines": true, смахнуть лишние пустые строки(в конце)
 
