@@ -120,6 +120,10 @@ body {
   margin-right: 52px;
 }
 
+.header-list-item {
+  position: relative;
+}
+
 .header-list-item:not(:last-child) {
   margin-right: 52px;
 
@@ -131,7 +135,37 @@ body {
   font-size: 15px;
 }
 
+.header-list-link:focus {
+  outline: 1px solid #71A7E2;
+  outline-offset: 3px;
+}
+
+.header-list-link:hover {
+  color: #71A7E2;
+}
+
+.header-list-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #3474BA;
+  content: "";
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+}
+
+.header-list-link:active {
+  color: #3172B9;
+  outline: none;
+}
+
+.header-list-link:active::after {
+  opacity: 1;
+}
+
 .btn {
+  position: relative;
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
@@ -139,6 +173,36 @@ body {
   background: #3172B9;
   border-radius: 3px;
   color: #fff;
+  outline: none;
+}
+
+.btn::after {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  content: "";
+  border-radius: inherit;
+  border: 1px solid #3172B9;
+  outline: none;
+  opacity: 0;
+}
+
+.btn:focus::after {
+  opacity: 1;
+}
+
+.btn:hover {
+  background-color: #71A7E2;
+}
+
+.btn:active {
+  background-color: #0E3B6C;
+}
+
+.btn:active::after {
+  opacity: 0;
 }
 
 /* hero */
