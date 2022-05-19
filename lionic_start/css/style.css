@@ -284,12 +284,19 @@ body {
   border: 1px solid #E4E4E4;
   border-radius: 5px;
 }
+
+.services-item:hover {
+  border-color: #3172B9;
+  background-color: #3172B9;
+}
+
 .services-item:not(:nth-child(4n)) {
   margin-right: 30px;
 }
 
 .services-item-icon {
   margin-bottom: 25px;
+  fill: #3172B9;
 }
 
 .services-item-title {
@@ -299,6 +306,18 @@ body {
   font-size: 20px;
   line-height: 130%;
   color: #1C1C1C;
+}
+
+.services-item:hover .services-item-title {
+  color: #fff;
+}
+
+.services-item:hover .services-item-desc {
+  color: #fff;
+}
+
+.services-item:hover .services-item-icon {
+  fill: #fff;
 }
 
 .services-item-desc {
@@ -332,6 +351,61 @@ body {
   overflow: hidden;
   border: 1px solid #E4E4E4;
   border-radius: 5px;
+}
+
+.blog-preview-link {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.blog-preview-link:focus {
+  background-color: #71A7E2;
+  outline: none;
+}
+
+.blog-preview-link:focus .blog-preview-time {
+  color: #fff;
+}
+
+.blog-preview-link:focus .blog-preview-title {
+  color: #fff;
+}
+
+.blog-preview-link:focus .blog-preview-desc {
+  color: #fff;
+}
+
+.blog-preview-link:hover {
+  background-color: #3172B9;
+}
+
+.blog-preview-link:hover .blog-preview-time {
+  color: #fff;
+}
+
+.blog-preview-link:hover .blog-preview-title {
+  color: #fff;
+}
+
+.blog-preview-link:hover .blog-preview-desc {
+  color: #fff;
+}
+
+.blog-preview-link:active {
+  background-color: #0E3B6C;
+}
+
+.blog-preview-link:active .blog-preview-time {
+  color: #fff;
+}
+
+.blog-preview-link:active .blog-preview-title {
+  color: #fff;
+}
+
+.blog-preview-link:active .blog-preview-desc {
+  color: #fff;
 }
 
 .blog-preview-image {
@@ -443,6 +517,7 @@ body {
 
 .contacts-item {
   flex-direction: column;
+  align-items: flex-start;
   width: 370px;
   background-position: left top;
   background-repeat: no-repeat;
@@ -491,6 +566,19 @@ body {
   color: #787878;
 }
 
+.contacts-item-link:focus {
+  outline: 1px solid #71A7E2;
+}
+
+.contacts-item-link:hover {
+  color: #71A7E2;
+  outline: none;
+}
+
+.contacts-item-link:active {
+  color: #0E3B6C;
+}
+
 /* Join us */
 .join-as {
   border-bottom: 1px solid #dadada;
@@ -515,6 +603,21 @@ body {
   margin-bottom: 19px;
 }
 
+.form-input:focus {
+  outline: none;
+  border-color: #71A7E2;
+  background-color: rgba(113, 167, 226, 0.2);
+}
+
+.form-input:hover {
+  border-color: #71A7E2;
+}
+
+.form-input:active {
+  border-color: #0E3B6C;
+  background-color: transparent;
+}
+
 .form-select {
   border: 1px solid #DADADA;
   border-radius: 50px;
@@ -522,6 +625,21 @@ body {
   padding: 16px 28px;
   width: 251px;
   height: 60px;
+  background-color: transparent;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #71A7E2;
+  background-color: rgba(113, 167, 226, 0.2);
+}
+
+.form-select:hover {
+  border-color: #71A7E2;
+}
+
+.form-select:active {
+  border-color: #0E3B6C;
   background-color: transparent;
 }
 
@@ -533,6 +651,21 @@ body {
   height: 100%;
   resize: none;
   padding: 16px 28px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #71A7E2;
+  background-color: rgba(113, 167, 226, 0.2);
+}
+
+.form-textarea:hover {
+  border-color: #71A7E2;
+}
+
+.form-textarea:active {
+  border-color: #0E3B6C;
+  background-color: transparent;
 }
 
 .form-top {
@@ -639,27 +772,41 @@ body {
 }
 
 .social-link {
-  display: block;
   width: 24px;
   height: 24px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link svg {
+  fill: #000;
+}
+
+.social-link-mail svg {
+  fill: transparent;
+  stroke: #000;
+}
+
+ .social-link:focus {
+  outline-offset: 2px;
+  outline: 1px solid #71A7E2;
+}
+
+.social-link:hover svg {
+  fill: #71A7E2;
+}
+
+.social-link-mail:hover svg {
+  fill: transparent;
+  stroke: #71A7E2;
+}
+
+.social-link:active {
+  fill: #3172B9;
+  outline: none;
 }
 
 .social-item:not(:last-child) {
   margin-right: 32px;
-}
-
-.social-link-tw {
-  background-image: url('../img/footer_tw.svg');
-}
-
-.social-link-linkedin {
-  background-image: url('../img/footer_ld.svg');
-}
-
-.social-link-mail {
-  background-image: url('../img/footer_ml.svg');
-
 }
