@@ -1,0 +1,158 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('MullerBold'),
+    url('../fonts/MullerBold.woff2') format('woff2'),
+    url('../fonts/MullerBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('MullerMedium'),
+    url('../fonts/MullerMedium.woff2') format('woff2'),
+    url('../fonts/MullerMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('MullerRegular'),
+    url('../fonts/MullerRegular.woff2') format('woff2'),
+    url('../fonts/MullerRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #f1f1f1;
+  font-family: 'Muller', sans-serif;
+  font-weight: 400;
+}
+
+/* glob */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid #CC9933;
+  border-radius: 10px;
+  color: #CC9933;
+  background-color: transparent;
+  padding: 13px 20px;
+}
+
+.phone {
+
+}
+
+.font-size-zero {
+  font-size: 0;
+}
+
+.no-margins {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.icon-link svg{
+  fill: #cc9933;
+}
+
+/* header */
+.header {
+  outline: 1px solid black;
+}
+
+.header__logo-link {
+  margin-right: 40px;
+  outline: 1px solid black;
+}
+
+.header-container-top {
+  justify-content: space-between;
+  outline: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.header-container-top-left {
+  align-items: center;
+  outline: 1px solid black;
+}
+
+.header-container-top-right {
+  align-items: center;
+  outline: 1px solid black;
+}
+
+.header-container-bottom {
+  padding: 14px 45px;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.header-container-bottom-left {
+  align-items: center;
+  border-right: 1px solid gray;
+  padding-right: 56px;
+}
+
+.header-container-bottom-right {
+
+}
+
+.header__menu-item:not(:last-child) {
+  margin-right: 45px;
+}
+
+.header__btn {
+  padding: 11px 20px;
+}
+
+.header__btn:not(:last-child) {
+  margin-right: 40px;
+}
