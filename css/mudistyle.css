@@ -1,33 +1,73 @@
 .body {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
   font-family: sans-serif;
+  padding: 10px;
 }
 
 .container {
-  position: relative
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  box-sizing: border-box;
+  position: relative;
   background-image: url("https://motaen.com/upload/resize/320/240/upload/wallpapers/source/2013/08/19/14/02/37090/IfdCvqnY2b-26b.jpg");
   background-repeat: no-repeat;
   width: 320px;
   height: 240px;
-  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px gray;
 }
 
-.link {
-  display: flex;
-  position: relative;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
+.container:active {
+  top: 2px;
+  left: 2px;
 }
 
-.link::after {
+.container:first-child {
+  margin-bottom: 15px;
+}
+
+.container:nth-child(odd) {
+  margin-right: 15px;
+}
+
+.container::after {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  content: "";
+  border-radius: inherit;
+  border: 3px solid black;
+  opacity: 0;
+}
+
+.container:hover::after {
+  opacity: 1;
+}
+
+.container:active::after {
+  top: 1px;
+  left: 1px;
+  opacity: 0;
+}
+
+.container a {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  content: "";
+  z-index: 1;
+}
+
+.container a span {
+  position: absolute;
+  bottom: 27px;
+  left: 45px;
+  color: white;
+  user-select: none;
+}
+
+.container:active a span {
+  color: red;
 }
