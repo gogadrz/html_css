@@ -76,6 +76,10 @@ body {
   padding: 13px 20px;
 }
 
+.block__title {
+
+}
+
 .phone {
 
 }
@@ -155,4 +159,26 @@ body {
 
 .header__btn:not(:last-child) {
   margin-right: 40px;
+}
+
+/* special-offers */
+.special-block {
+  min-height: 540px;
+  outline: 1px solid orangered;
+}
+
+.special-block-vertical-split {
+  outline: 1px solid lightcoral;
+  flex-direction: column;
+  flex: 1;
+}
+
+.special-block-horizontal-split {
+  outline: 1px solid greenyellow;
+  flex: 1;
+  margin-right: 23px;
+}
+
+.special-block-horizontal-split:first-of-type {
+  margin-bottom: 23px;
 }
