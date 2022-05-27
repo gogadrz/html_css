@@ -1,0 +1,20 @@
+:root {
+  --gap: 30px;
+}
+
+.body {
+  min-width: 320px; (был 1200px;)
+}
+
+.container {
+  max-width: 1200px; (был width: 1200px;)
+}
+
+.services-item {
+  width: calc((100% - (var(--gap) * 3)) / 4); (было 270px)
+}
+
+.services-item:not(:nth-child(4n)) {
+  margin-right: var(--gap);
+}
+
