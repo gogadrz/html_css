@@ -1,3 +1,4 @@
+<style>
 .body {
   display: flex;
   flex-wrap: wrap;
@@ -79,3 +80,21 @@
   transition: none;
   border: none;
 }
+
+</style>
+
+
+<body class="body">
+  <div class="container">
+    <a class="my_link" href="#"><span class="gsp">Какая то ссылка</span></a>
+  </div>
+  <div class="container">
+    <a class="my_link" href="#"><span class="gsp">Какая то ссылка</span></a>
+  </div>
+  <div class="container">
+    <a class="my_link" href="#"><span class="gsp">Какая то ссылка</span></a>
+  </div>
+  <div class="container">
+    <a class="my_link" href="#"><span class="gsp">Какая то ссылка</span></a>
+  </div>
+</body>
