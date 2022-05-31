@@ -1,54 +1,35 @@
-/* .body {
+.body {
+}
+
+.list {
   display: flex;
-  flex-wrap: wrap;
-  padding: 50px;
-  font-family: sans-serif;
-  max-width: 800px;
-  background-color: rgba(100,100,100,.1);
-  font-size: 0;
-
-} */
-:root {
-  --gap: 32px;
-}
-.about-box {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-
-/*   justify-content: center; */
-  outline: 1px solid black;
-  /* min-height: 500px; */
-}
-.about-box-top {
- outline: 1px solid black;
- margin-bottom: 32px;
-}
-.about-box-bottom {
-  outline: 1px solid black;
-  display: flex;
-
-}
-.about-bottom-left {
-  outline: 1px solid black;
-  width: calc((100% - (var(--gap) / 1)) / 2);
-  min-height: 250px;
-  margin-right: var(--gap);
-}
-.about-bottom-right {
-  box-sizing: border-box;
-  outline: 1px solid black;
-  width: calc((100% - 32px) / 2);
-  overflow: hidden;
+  list-style: none;
 }
 
-.about-right__item {
-  flex: 1;
-  outline: 1px solid black;
+.list__item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}
 
-  /* height: calc((100% - (var(--gap) /1 )) / 2); */
-  /* overflow-y: hidden; */
+.list__item:not(:last-child) {
+  margin-right: 15px;
 }
-.gap {
-  height: var(--gap);
-}
+
+.link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+ }
+
+ /* .link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+}  */
