@@ -1,0 +1,86 @@
+:root {
+  --gap: 32px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 1770px;
+}
+
+.main {
+  padding: 40px;
+}
+
+.about-box {
+  display: flex;
+  width: inherit;
+  flex-direction: column;
+  outline: 1px solid blue;
+  outline-offset: 2px;
+}
+
+.about-box__top {
+  display: flex;
+  outline: 1px solid green;
+  outline-offset: -1px;
+  margin-bottom: 50px;
+}
+
+.about-box__bottom {
+  display: flex;
+  /* flex-direction: row; */
+  outline: 1px solid orange;
+  justify-content: center;
+}
+
+.about-box__bottom-left {
+  display: flex;
+  flex: 1;
+  background-image: url("../img/about-bg-0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 868px;
+  height: 622px;
+  outline: 1px solid salmon;
+  margin-right: var(--gap);
+}
+
+.about-box__bottom-right {
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid darkolivegreen;
+  width: 870px;
+}
+
+.about-box__item {
+  display: flex;
+  flex: 1;
+  outline: 1px solid teal;
+}
+
+.about-box__item:not(:last-child) {
+  margin-bottom: var(--gap);
+}
+
+.about-box__descr {
+
+}
