@@ -1,0 +1,70 @@
+@media (max-width: 1024px) {
+  .form__input,
+  .form__select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__btn {
+    padding: 12px 35px;
+    margin-right: 7px;
+  }
+
+  .burger {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    color: #3172b9;
+  }
+
+  .burger__line {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    border-radius: inherit;
+    background-color: currentColor;
+    transform: translateX(-50%);
+  }
+
+  .burger__line:nth-child(1) {
+    top: 13px;
+  }
+
+  .burger__line:nth-child(3) {
+    bottom: 13px;
+  }
+
+  .burger__line:nth-child(2) {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .hero__content {
+    max-width: 75%;
+  }
+
+  .services__list {
+    flex-wrap: wrap;
+  }
+
+  .services__item {
+    margin-bottom: var(--gap);
+    width: calc((100% - (var(--gap))) / 2);
+  }
+
+  .services__item:not(:nth-child(4n)) {
+    margin-right: 0;
+  }
+
+  .services__item:not(:nth-child(2n)) {
+    margin-right: var(--gap);
+  }
+}
