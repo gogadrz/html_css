@@ -223,12 +223,134 @@ body {
   border-bottom: 2px solid #e1670e;
 }
 
-.header__search {
-  /* position: absolute;
+.search {
+  position: relative;
+}
+
+/* .search-active {
+
+} */
+/*
+.header__search::after {
+  position: absolute;
   top: 0;
-  right: -77px;
-  opacity: 0;
-  z-index: -1; */
+  right: -58px;
+  bottom: 0;
+  left: -455px;
+  content: "";
+  outline: 1px solid gold;
+} */
+
+.search__active {
+  position: absolute;
+  /* max-width: 539px; */
+  top: 0;
+  right: -58px;
+  bottom: 0;
+  left: -455px;
+  content: "";
+  box-shadow: 0 0 20px rgba(0, 0, 0, .12);
+  border: none;
+  border-radius: 16px;
+  padding: 13px 13px 14px 30px;
+  background-color: #fff;
+  outline: auto;
+  /* opacity: 0; */
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form label {
+  display: flex;
+  flex: auto;
+}
+
+.search-form__input {
+  flex: auto;
+  border: none;
+}
+
+.search-form__input-wrapper {
+  display: flex;
+  position: relative;
+  flex: auto;
+  margin-right: 14px;
+}
+
+.search-form__input-wrapper::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  content: "";
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.search-form__input::-webkit-input-placeholder {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.94px;
+  letter-spacing: 1.22px;
+  color: #adadad;
+}
+
+.search-form__right-block {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 5px;
+}
+
+.search-form__post-icon {
+  /* padding-top: 5px; */
+  margin-right: 20px;
+  /* outline: none; */
+}
+
+.search-form__close-icon {
+  outline: none;
+}
+
+.search-form__close-icon>svg>rect {
+  fill: #999;
+  transition: fill .2s ease-in-out;
+
+}
+
+.search-form__close-icon>svg>circle {
+  stroke: #999;
+  transition: stroke .2s ease-in-out;
+}
+
+.search-form__close-icon:focus-visible:not(:active) {
+  outline-offset: 4px;
+  outline: 2px solid #ff9900;
+  transition: outline .2s ease-in-out;
+}
+
+
+.search-form__close-icon:hover>svg>rect {
+  fill: #ff9900;
+  transition: fill .2s ease-in-out;
+}
+
+.search-form__close-icon:hover>svg>circle {
+  stroke: #ff9900;
+  transition: stroke .2s ease-in-out;
+}
+
+/* .search-form__close-icon:a */
+.search-form__close-icon:active>svg>rect {
+  fill: #333;
+  transition: none;
+}
+
+.search-form__close-icon:active>svg>circle {
+  stroke: #333;
+  transition: none;
 }
 
 .header__bottom {

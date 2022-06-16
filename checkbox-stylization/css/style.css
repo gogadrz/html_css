@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 25px;
+  color: #cacaca;
+  background-color: #414141;
+}
+
+.option {
+  display: block;
+  margin-bottom: .5em;
+}
+
+.check {
+  padding-left: 1.2em;
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.check__box {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 2px;
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 0 0.1em #cacaca;
+  background-color: #414141;
+}
+
+/* checked */
+.check__input:checked + .check__box {
+  background-image: url("../img/checkbox-checked-wo-border.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* focused */
+.check__input:focus-visible + .check__box {
+  outline: 2px solid #ff9900;
+  outline-offset: 5px;
+}
+
+.check__input:disabled + .check__box {
+
+}
+
+/* .check__input:checked:disabled + .check__box {
+
+} */
+
+/*
+checked - focus можно записать так:
+.check__input:checked:focus + .check__box
+ */
