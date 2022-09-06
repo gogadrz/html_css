@@ -1,10 +1,5 @@
 :root {
-  --max-width: 1920px;
-  --horizontal-padding: 75px;
-  --gap: 32px;
-  /* --footer-gap: 30px; */
-  /* --color-mine-shaft: #333333; */
-  --color-light: #ffffff;
+
 }
 
 html {
@@ -27,71 +22,8 @@ img {
   max-width: 100%;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: local('MontserratRegular'),
-    url('../fonts/MontserratRegular.woff2') format('woff2'),
-    url('../fonts/MontserratRegular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: local('MontserratBold'),
-    url('../fonts/MontserratExtraBold.woff2') format('woff2'),
-    url('../fonts/MontserratExtraBold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: local('MontserratSemiBold'),
-    url('../fonts/MontserratSemiBold.woff2') format('woff2'),
-    url('../fonts/MontserratBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: local('MontserratMedium'),
-    url('../fonts/MontserratMedium.woff2') format('woff2'),
-    url('../fonts/MontserratMedium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: local('MontserratExtraBold'),
-    url('../fonts/MontserratExtraBold.woff2') format('woff2'),
-    url('../fonts/MontserratExtraBold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Muller';
-  src: local('MullerRegular'),
-    url('../fonts/MullerRegular.woff2') format('woff2'),
-    url('../fonts/MullerRegular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 body {
-  /* background-color: #e5e5e5; */
-  min-width: 768px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+
 }
 
 /* global */
@@ -125,56 +57,10 @@ body {
 }
 
 .container {
-  max-width: var(--max-width);
-  padding: 0 var(--horizontal-padding);
+  padding: 75px;
   margin: 0 auto;
 }
 
-.main-title {
-  margin: 0;
-  padding: 100px 80px;
-  font-size: 70px;
-  font-weight: 800;
-  line-height: 85.33;
-  color: var(--color-light);
-  color: #000;
-}
-
-/* header */
-.header {
-/* padding-top: 14px; */
-outline: 1px solid rebeccapurple;
-}
-
-.header__top-left {
-  margin-right: auto;
-  padding: 12px 0;
-  outline: 1px solid rebeccapurple;
-}
-
-.header__top-right {
-  align-items: center;
-  outline: 1px solid rebeccapurple;
-}
-
-.nav__item {
-  margin-right: 85px;
-}
-
-.nav__link {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 21.94px;
-  color: var(--color-mine-shaft);
-}
-
-/* hero */
-.hero__content {
-  background-image: url("../img/hero-bg-1.jpg");
-  background-repeat: no-repeat;
-  background-size: 1770px 620px;
-  background-position: top center;
-  min-height: 620px;
-  width: 1770px;
-  outline: 1px solid rebeccapurple;
+.o-l {
+  outline: auto;
 }

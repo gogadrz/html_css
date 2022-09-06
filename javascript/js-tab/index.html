@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js tabs</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <ul class="list-reset flex tabs-nav">
+      <li class="tabs-nav__item">
+        <button class="btn tabs-nav__btn tabs-nav__btn_active" data-path="one">Первый таб</button>
+      </li>
+      <li class="tabs-nav__item">
+        <button class="btn tabs-nav__btn" data-path="two">Второй таб</button>
+      </li>
+      <li class="tabs-nav__item">
+        <button class="btn tabs-nav__btn" data-path="three">Третий таб</button>
+      </li>
+    </ul>
+    <!-- Элементы табов -->
+    <div class="tabs-item tabs-item_active" data-target="one">
+      <pre>
+Папа у Васи силен в математике,
+Учится папа за Васю весь год.
+Где это видано, где это слыхано, -
+Папа решает, а Вася сдает?!
+      </pre>
+    </div>
+    <div class="tabs-item" data-target="two">
+      <pre>
+Всё пройдёт, придёт и мой черёд
+И взлечу я тенью золотистой.
+На коленях перед жизнью
+Мне придётся дать отчёт,
+И как к матери припасть к Земле росистой.
+      </pre>
+    </div>
+    <div class="tabs-item" data-target="three">
+      <pre>
+Помню каждую ступень,
+Что вела к знакомой двери.
+Помню, как в одно мгновенье
+Превращался целый день.
+      </pre>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

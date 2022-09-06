@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 50%;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.tabs-nav {
+  margin-bottom: 30px;
+}
+
+.tabs-nav__btn_active {
+  position: relative;
+  color: tan;
+}
+.tabs-nav__btn_active::after {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  left: 0;
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: tan;
+}
+
+.tabs-item {
+  display: none;
+}
+
+.tabs-item_active {
+  display: block;
+}

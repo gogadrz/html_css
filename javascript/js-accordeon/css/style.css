@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 50%;
+}
+
+.btn-reset {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+/* ================================ */
+.ac {
+  border: none;
+}
+
+.ac .ac-trigger {
+  outline: none;
+  transition: color .4s ease-in-out;
+}
+
+.ac .ac-trigger:focus div.my-border {
+  color: brown;
+  transition: color .4s ease-in-out;
+}
+
+.ac .ac-trigger:hover {
+  color: greenyellow;
+}
+
+.ac .ac-trigger > .my-border{
+  padding: 5px 0;
+  border: 1px solid currentColor;
+  border-left: none;
+  border-right: none;
+}

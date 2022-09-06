@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.test {
+  outline: 3px solid gray;
+  padding: 25px;
+}
+
+.container-limit {
+  max-width: 1200px;
+}

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lionic</title>
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
 </head>
@@ -77,27 +78,24 @@
   <main class="main">
     <section id="hero" class="hero">
       <div class="container">
-        <div class="hero__content flex">
-
-          <h1 class="section-title hero__title">
-            This is&nbsp;simply a&nbsp;smarter way to&nbsp;make your legal online
-          </h1>
-
-          <p class="hero__descr">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-            ut&nbsp;laoreet dolore.
-          </p>
-
-          <div class="hero__wrapper flex">
-            <button class="btn btn-reset hero__btn">
-              FREE 30&nbsp;DAY TRIAL
-            </button>
-
-            <span class="hero__secure">
-              SSL secured connection
-            </span>
+        <div class="row">
+          <div class="col-6">
+            <h1 class="section-title hero__title">
+              This is&nbsp;simply a&nbsp;smarter way to&nbsp;make your legal online
+            </h1>
+            <p class="hero__descr">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+              ut&nbsp;laoreet dolore.
+            </p>
+            <div class="hero__wrapper flex">
+              <button class="btn btn-reset hero__btn">
+                FREE 30&nbsp;DAY TRIAL
+              </button>
+              <span class="hero__secure">
+                SSL secured connection
+              </span>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -113,8 +111,8 @@
           Lionic guides you on&nbsp;making decisions for all aspects of&nbsp;your end-of-life plans.
         </p>
 
-        <ul class="services__list list-reset flex">
-          <li class="services__item flex">
+        <ul class="row services__list list-reset">
+          <li class="col-3 services__item flex">
 
             <svg class="services-item-icon" width="68" height="66" viewBox="0 0 68 66" fill="none">
               <path
@@ -131,7 +129,7 @@
 
           </li>
 
-          <li class="services__item flex">
+          <li class="col-3 services__item flex">
 
             <svg class="services-item-icon" width="86" height="64" viewBox="0 0 86 64" fill="none">
               <path
@@ -149,7 +147,7 @@
 
           </li>
 
-          <li class="services__item flex">
+          <li class="col-3 services__item flex">
 
             <svg class="services-item-icon" width="64" height="64" viewBox="0 0 64 64" fill="none">
               <path
@@ -166,7 +164,7 @@
 
           </li>
 
-          <li class="services__item flex">
+          <li class="col-3 services__item flex">
 
             <svg class="services-item-icon" width="65" height="65" viewBox="0 0 65 65" fill="none">
               <path
@@ -269,8 +267,10 @@
               </a>
             </article>
           </li>
-
         </ul>
+        <div class="articles__button-wrapper flex">
+          <button class="btn-reset btn articles_more articles_center">Показать еще</button>
+        </div>
       </div>
     </section>
 
@@ -493,7 +493,7 @@
     </div>
 
   </footer>
-
+  <script src="js/script.js"></script>
 </body>
 
 </html>

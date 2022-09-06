@@ -1,0 +1,15 @@
+.choices__list--dropdown .choices__placeholder {
+  display: none;
+  }
+
+<select class="js-choice">
+      <option value="">Материал</option>
+      <option value="Древесина">Древесина</option>
+      <option value="Металл">Металл</option>
+      <option value="Камень">Камень</option>
+      <option value="Пластик">Пластик</option>
+      <option value="Композитный">Композитный</option>
+      <option value="Гипс">Гипс</option>
+    </select>
+
+

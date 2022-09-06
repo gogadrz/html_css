@@ -1,0 +1,110 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 80%;
+  padding: 75px 0;
+  margin: 0 auto;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-block {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 60px;
+  background-color: orangered;
+  margin-right: 30px;
+}
+
+.nav__list {
+  display: flex;
+  margin-right: auto;
+}
+
+.nav__item:not(:last-child) {
+  /* min-width: 20%; */
+  margin-right: 30px;
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  user-select: none;
+}
+
+.burger::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  outline: 2px solid orange;
+}
+
+.burger__line:nth-child(1) {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: orange;
+}
+
+.burger__line:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: orange;
+}
+
+.burger__line:nth-child(3) {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: orange;
+}
+
+/* .burger:hover {
+  cursor: pointer;
+}
+
+.burger:active {
+  display: none;
+} */
+
+.stop-scroll {
+  overflow: hidden;
+}

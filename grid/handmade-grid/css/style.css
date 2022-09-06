@@ -1,0 +1,120 @@
+:root {
+  --container-max-width: 1200px;
+  --container-padding: 15px;
+  --columns: 12;
+  --gutter: 30px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* global */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.font-size-reset {
+  font-size: 0;
+}
+
+.no-margins {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--container-padding) * -1);
+  margin-right: calc(var(--container-padding) * -1);
+  outline: 1px solid red;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  flex-grow: 0;
+  height: 150px;
+  padding-left: calc(var(--gutter) / 2);
+  padding-right: calc(var(--gutter) /2 );
+  background-color: rgba(255, 0, 0, .3);
+  outline: 1px solid blue;
+}
+
+.col-1 { flex-basis: calc(100% / var(--columns));}
+.col-2 { flex-basis: calc(calc(100% / var(--columns)) * 2);}
+.col-3 { flex-basis: calc(calc(100% / var(--columns)) * 3);}
+.col-4 { flex-basis: calc(calc(100% / var(--columns)) * 4);}
+.col-5 { flex-basis: calc(calc(100% / var(--columns)) * 5);}
+.col-6 { flex-basis: calc(calc(100% / var(--columns)) * 6);}
+.col-7 { flex-basis: calc(calc(100% / var(--columns)) * 7);}
+.col-8 { flex-basis: calc(calc(100% / var(--columns)) * 8);}
+.col-9 { flex-basis: calc(calc(100% / var(--columns)) * 9);}
+.col-10 { flex-basis: calc(calc(100% / var(--columns)) * 10);}
+.col-11 { flex-basis: calc(calc(100% / var(--columns)) * 11);}
+.col-12 { flex-basis: 100%;}
+
+.content {
+  height: 100%;
+  text-align: center;
+  background-color: rgba(25, 255, 0, .3);
+}

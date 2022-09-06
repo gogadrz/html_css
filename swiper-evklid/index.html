@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Evklid</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <p>Добавьте больше текста для переполнения, слайдер будет растягиваться и адаптироваться в зависимости от высоты
+    секции, а секция будет зависить по высоте от контента.</p>
+  <section class="hero">
+
+    <div class="container">
+      <div class="hero__content">
+        <div class="swiper hero__swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide bg1">Slide 1</div>
+            <div class="swiper-slide bg2">Slide 2</div>
+            <div class="swiper-slide bg3">Slide 3</div>
+
+          </div>
+          <!-- If we need pagination -->
+
+          <div class="swiper-bullet-pagination hero__pagination"></div>
+        </div>
+        <h1 class="hero__title">Заголовок</h1>
+        <p class="hero__text">Текст</p>
+        <button class="hero__btn">Кнопка</button>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

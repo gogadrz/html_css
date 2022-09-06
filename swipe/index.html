@@ -6,26 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swipe test</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
   <div class="container">
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://i.7fon.org/320/g577327.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="https://gavkusha.ru/wp-content/cache/thumb/31156d9ff_320x200.jpg" alt="">
-        </div>
-        <div class="swiper-slide"><img src="https://i.7fon.org/320/z148498.jpg" alt=""></div>
+    <!-- Slider main container -->
+    <div class="swiper hero__swiper">
+      <div class="hero__text-wrapper">
+        <h1 class="hero__title">Какой то заголовок</h1>
+        <p class="hero__text">Какой то текст</p>
       </div>
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper hero__swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide hero__swiper-slide hero__swiper-slide_bg1"></div>
+        <div class="swiper-slide hero__swiper-slide hero__swiper-slide_bg2"></div>
+        <div class="swiper-slide hero__swiper-slide hero__swiper-slide_bg3"></div>
+        ...
+      </div>
+      <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <!-- <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
     </div>
   </div>
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

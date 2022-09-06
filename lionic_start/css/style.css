@@ -78,8 +78,8 @@ body {
 
 .container {
   max-width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto;
+  /* padding: 0 15px;
+  margin: 0 auto; */
 }
 
 .section-title {
@@ -223,11 +223,11 @@ body {
   background-size: cover;
 }
 
-.hero__content {
+/* .hero__content {
   max-width: 50%;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 
 .hero__title {
   margin: 0;
