@@ -1,0 +1,126 @@
+:root {
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  src: local('OpenSansRegular'),
+    url('../fonts/OpenSansRegular.woff2') format('woff2'),
+    url('../fonts/OpenSansRegular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  src: local('OpenSansSemiBold'),
+    url('../fonts/OpenSansSemiBold.woff2') format('woff2'),
+    url('../fonts/OpenSansSemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  src: local('OpenSansBold'),
+    url('../fonts/OpenSansBold.woff2') format('woff2'),
+    url('../fonts/OpenSansBold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: italic;
+  src: local('OpenSansItalic'),
+    url('../fonts/OpenSansItalic.woff2') format('woff2'),
+    url('../fonts/OpenSansItalic.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: 'OpenSans';
+  font-weight: 400;
+  background-color: gray;
+}
+
+/* global */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.font-size-reset {
+  font-size: 0;
+}
+
+.margin-reset {
+  margin: 0;
+}
+
+.padding-reset {
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
+
+.stretching-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------------ */
+/* header */
+.header__row {
+  list-style: none;
+  padding-left: 0;
+}
+
+.header__logo {
+  /* display: flex; */
+  width: 97px;
+  height: 22px;
+  background-image: url('../img/Лого.svg');
+  background-repeat: no-repeat;
+  /* background-size: 97px 22px; */
+}
