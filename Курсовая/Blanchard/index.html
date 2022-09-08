@@ -13,13 +13,33 @@
 
 <body>
   <header class="header">
-    <div class="container-fluid">
-      <ul class="row header__row">
-        <li class="col header__col">burger</li>
-        <li class="col-5 text-center header__col">
-          <div class="logo header__logo"></div>
+    <div class="container-fluid container__header">
+      <ul class="row header__row align-items-center">
+        <li class="col header__col">
+          <button class="btn-reset burger">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link" href="#">О&nbsp;нас</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Галерея</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Каталог</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">События</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Проекты</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+            </ul>
+          </nav>
+
         </li>
-        <li class="col text-end header__col">find</li>
+        <li class="col-5 text-center header__col">
+          <span class="header__logo"><img src="img/logo-320.svg" alt="Лого"></span>
+        </li>
+        <li class="col text-end header__col">
+          <img src="img/header-search-icon.svg" alt="Поиск">
+        </li>
 
       </ul>
 
