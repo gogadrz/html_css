@@ -86,6 +86,17 @@ body {
   cursor: pointer;
 }
 
+.btn {
+  border: 2px solid #9D5CD0;
+  border-radius: 100px;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.34px;
+  color: var(--light-color);
+  padding: 10px 0;
+}
+
 .font-size-reset {
   font-size: 0;
 }
@@ -111,6 +122,11 @@ body {
   width: 100%;
   height: auto;
 }
+
+/* .swiper {
+  width: 600px;
+  height: 300px;
+} */
 
 /* ------------------------ */
 /* header */
@@ -173,18 +189,18 @@ body {
 
 .burger--active
 .burger__line:first-child {
-  top: 13px;
-  left: 5px;
-  width: 22px;
+  top: 3px;
+  left: -1px;
+  width: 19px;
   transform: rotate(45deg);
   transform-origin: center;
 }
 
 .burger--active
 .burger__line:last-child {
-  top: 13px;
-  left: 5px;
-  width: 22px;
+  top: 3px;
+  left: -1px;
+  width: 19px;
   transform: rotate(-45deg);
   transform-origin: center;
 }
@@ -193,7 +209,10 @@ body {
   padding: 12px 0;
 }
 
-.nav {
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
@@ -204,8 +223,7 @@ body {
   transform: translateX(-120%);
   transition: visibility .3s ease-in-out, transform .3s ease-in-out;
   background: rgba(0, 0, 0, 0.9);
-  padding-top: 50px;
-  padding-left: 15px;
+  padding: 46px 15px;
 }
 
 .nav__list {
@@ -213,15 +231,63 @@ body {
   padding-left: 0;
 }
 
-.nav__item:not(:last-child) {
+/* .nav__item:not(:last-child) {
   margin-bottom: 8px;
-}
+} */
 
 .nav__link {
-  color: orange;
+  color: var(--light-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 32px;
 }
 
 .nav--active {
   visibility: visible;
   transform: none;
+}
+
+.header__login-btn {
+  max-width: 40%;
+}
+
+.header__login-btn span {
+  background-image: url('../img/login-btn-icon-320.svg');
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 12px;
+  /* outline: 1px solid green; */
+  /* align-items: center; */
+}
+
+
+/* -------------------------------------------- */
+/* hero */
+.hero {
+  position: relative;
+}
+
+.hero__swiper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero__swiper-slide {
+  background-size: cover;
+}
+
+.hero__swiper-slide--slide-1 {
+  background-image: url('../img/hero-bg-img-1-320.jpg');
+}
+
+.hero__swiper-slide--slide-2 {
+  background-image: url('../img/hero-bg-img-2-320.png');
+}
+
+.hero__swiper-slide--slide-2 {
+  background-image: url('../img/hero-bg-img-3-320.png');
 }

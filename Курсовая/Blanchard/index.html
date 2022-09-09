@@ -7,6 +7,7 @@
   <title>Blanchard</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
 </head>
@@ -22,16 +23,23 @@
             <span class="burger__line"></span>
           </button>
 
-          <nav class="nav">
-            <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link" href="#">О&nbsp;нас</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Галерея</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Каталог</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">События</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Проекты</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
-            </ul>
-          </nav>
+          <div class="nav-wrapper">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#">О&nbsp;нас</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Галерея</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Каталог</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">События</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+              </ul>
+            </nav>
+            <button class="btn-reset btn header__login-btn">
+              <span>Войти</span>
+            </button>
+          </div>
+
+
 
         </li>
         <li class="col-5 text-center header__col">
@@ -50,6 +58,35 @@
 
   <main class="main">
     <div class="hero">
+
+      <!-- Slider main container -->
+      <div class="swiper hero__swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper hero__swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide-1">Slide 1</div>
+          <div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide-2">Slide 2</div>
+          <div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide-3">Slide 3</div>
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination hero__swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+      <!-- /swiper -->
+
+      <h1 class="title hero__title">
+        Прикоснитесь к прекрасному
+      </h1>
+      <p class="descr hero__descr">
+        Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений
+      </p>
 
     </div>
     <div class="about">
@@ -76,6 +113,7 @@
 
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
