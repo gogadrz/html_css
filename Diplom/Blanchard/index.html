@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blanchard</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container-fluid header__container">
+      <ul class="row header__row align-items-center">
+        <li class="col header__col">
+          <button class="btn-reset burger">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+
+          <div class="nav-wrapper">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#">О&nbsp;нас</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Галерея</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Каталог</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">События</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+              </ul>
+            </nav>
+            <button class="btn-reset btn header__login-btn">
+              <span>Войти</span>
+            </button>
+          </div>
+
+
+
+        </li>
+        <li class="col-5 text-center header__col">
+          <span class="header__logo"><img src="img/logo-320.svg" alt="Лого"></span>
+        </li>
+        <li class="col text-end header__col">
+          <img src="img/header-search-icon.svg" alt="Поиск">
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </header>
+
+  <main class="main">
+    <div class="hero">
+
+      <div class="container-fluid hero__container">
+        <!-- Slider main container -->
+        <div class="swiper hero__swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper hero__swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide-1"></div>
+            <div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide-2"></div>
+            <div class="swiper-slide hero__swiper-slide hero__swiper-slide--slide-3"></div>
+          </div>
+        </div>
+        <!-- /swiper -->
+
+        <div class="hero__content-wrapper">
+          <div>
+            <h1 class="title hero__title">
+              Прикоснитесь к прекрасному
+            </h1>
+            <p class="descr hero__descr">
+              Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки
+              для новых предложений
+            </p>
+          </div>
+          <button class="btn-reset btn hero__btn">Подписаться на рассылку</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="about">
+      <div class="container-fluid about__container">
+        <div class="row about__row">
+          <div class="col-12 about__col">
+            <h2 class="title about__title">О нас</h2>
+            <p class="descr about__descr">
+              Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
+              участника как способного принимать собственные решения касаемо распределения внутренних резервов
+              и ресурсов. Не следует, однако, забывать, что высококачественный прототип будущего проекта влечёт за собой
+              процесс внедрения и модернизации модели развития. Повседневная практика показывает, что высокое качество
+              позиционных исследований создаёт необходимость включения в производственный план целого ряда внеочередных
+              мероприятий с учётом комплекса распределения внутренних резервов и ресурсов. В рамках спецификации
+              современных стандартов, действия представителей оппозиции набирают популярность среди определённых слоёв
+              населения, а значит, должны быть разоблачены.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="gallery">
+      <div class="container-fluid gallery__container">
+        <div class="row gallery__row">
+          <div class="col-12 gallery__col">
+            <h2 class="title gallery__title">Галерея</h2>
+
+            <legend class="gallery__select-legend">Фильтр:</legend>
+
+            <div class="gallery__select-block">
+              <select name="select" class="gallery__select">
+                <option value="">Живопись</option>
+                <option value="Рисунок">Рисунок</option>
+                <option value="Скульптура">Скульптура</option>
+              </select>
+            </div>
+
+            <div class="gallery__check-block">
+              <label class="gallery__check-label">
+                <input type="checkbox" class="gallery__check">
+                XIX век
+                <span>
+                  <!-- <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 3.47742L3.10291 5.58033L7.58033 1.10291" stroke="#CCB26E" />
+                  </svg> -->
+
+                  <svg width="4" height="5" viewBox="0 0 4 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2" cy="2.43433" r="2" fill="#C283F3" />
+                  </svg>
+
+                </span>
+              </label>
+              <label class="gallery__check-label">
+                <input type="checkbox" class="gallery__check">
+                XX век
+                <span>
+                  <!-- <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 3.47742L3.10291 5.58033L7.58033 1.10291" stroke="#CCB26E" />
+                  </svg> -->
+
+                  <svg width="4" height="5" viewBox="0 0 4 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2" cy="2.43433" r="2" fill="#C283F3" />
+                  </svg>
+
+                </span>
+              </label>
+              <label class="gallery__check-label">
+                <input type="checkbox" class="gallery__check">
+                Современность
+                <span>
+                  <!-- <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 3.47742L3.10291 5.58033L7.58033 1.10291" stroke="#CCB26E" />
+                  </svg> -->
+
+                  <svg width="4" height="5" viewBox="0 0 4 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2" cy="2.43433" r="2" fill="#C283F3" />
+                  </svg>
+
+                </span>
+              </label>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper gallery__swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper gallery__swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-1"></div>
+                <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-2"></div>
+                <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-3"></div>
+              </div>
+
+              <!-- If we need pagination -->
+              <div class="swiper-pagination gallery__swiper-pagination"></div>
+
+            </div>
+
+            <div class="gallery__swiper-btn-wrapper">
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev gallery__swiper-button-prev"></div>
+
+              <!-- If we need pagination -->
+              <div class="swiper-pagination gallery__swiper-pagination"></div>
+
+              <div class="swiper-button-next gallery__swiper-button-next"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="catalog">
+
+    </div>
+    <div class="events">
+
+    </div>
+    <div class="projects">
+
+    </div>
+    <div class="feedback">
+
+    </div>
+  </main>
+
+  <footer class="footer">
+
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/choices.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
