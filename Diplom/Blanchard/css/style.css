@@ -392,7 +392,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 50px;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
 }
 
 .gallery__container {
@@ -566,7 +566,7 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 
 /* gallery swiper */
 .gallery__swiper {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .gallery__swiper-slide {
@@ -588,10 +588,26 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   background-image: url('../img/gallery-swiper-img-3-320.jpg');
 }
 
+.gallery__swiper-slide--slide-4 {
+  background-image: url('../img/gallery-swiper-img-4-320.jpg');
+}
+
+.gallery__swiper-slide--slide-5 {
+  background-image: url('../img/gallery-swiper-img-5-320.jpg');
+}
+
 .gallery__swiper-btn-wrapper {
   display: flex;
   position: relative;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 80px;
+  /* outline: 2px solid orange; */
+  align-items: center;
+}
+
+.gallery__swiper-btn-wrapper div {
+  /* display: flex; */
+  /* width: 80%; */
 }
 
 .gallery__swiper-button-prev {
@@ -601,6 +617,7 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   height: 30px;
   background-image: url('../img/gallery-swiper-btn-back.svg');
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 .gallery__swiper-button-prev::after {
@@ -614,8 +631,33 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   height: 30px;
   background-image: url('../img/gallery-swiper-btn-next.svg');
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 .gallery__swiper-button-next::after {
   opacity: 0;
+}
+
+.gallery__swiper-pagination {
+  position: static;
+  color: var(--light-color);
+  width: auto;
+}
+
+/* --------------------------------------- */
+/* catalog */
+.catalog {
+  padding-top: 50px;
+}
+
+.catalog__container {
+  width: var(--container-mobile);
+}
+
+.catalog__title {
+  color: var(--dark-color);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38.13px;
+  margin-bottom: 20px;
 }

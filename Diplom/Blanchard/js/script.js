@@ -75,3 +75,8 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
   },
 
 });
+
+// accordion
+  new Accordion('.catalog__accordion-container', {
+
+  });

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="libs/accordion.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
 </head>
@@ -177,21 +178,23 @@
                 <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-1"></div>
                 <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-2"></div>
                 <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-3"></div>
+                <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-4"></div>
+                <div class="swiper-slide gallery__swiper-slide gallery__swiper-slide--slide-5"></div>
               </div>
 
               <!-- If we need pagination -->
-              <div class="swiper-pagination gallery__swiper-pagination"></div>
+              <!-- <div class="swiper-pagination gallery__swiper-pagination"></div> -->
 
             </div>
 
             <div class="gallery__swiper-btn-wrapper">
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev gallery__swiper-button-prev"></div>
-
-              <!-- If we need pagination -->
-              <div class="swiper-pagination gallery__swiper-pagination"></div>
-
-              <div class="swiper-button-next gallery__swiper-button-next"></div>
+              <!-- <div> -->
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev gallery__swiper-button-prev"></div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination gallery__swiper-pagination"></div>
+                <div class="swiper-button-next gallery__swiper-button-next"></div>
+              <!-- </div> -->
             </div>
 
           </div>
@@ -200,7 +203,104 @@
 
     </div>
     <div class="catalog">
+      <div class="container-fluid catalog__container">
+        <div class="row container__row">
+          <div class="col-12 container-col">
+            <h2 class="title catalog__title">Каталог</h2>
+            <!-- accordion -->
+            <div class="catalog__accordion-container">
 
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 1400 по 1499 гг</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Бенедетто ди Биндо
+                    Бергоньоне, Амброджо
+                    Биссоло, Франческо
+                    Больтраффио, Джованни
+                    Бонсиньори, Франческо
+                    Боттичини, Рафаэлло
+                    Брамантино
+                    Бреа, Людовико
+                    Бьяджо д’Антонио Туччи
+                    Веккьетта
+                    Андреа Верроккьо
+                    Доменико Гирландайо
+                    Беноццо Гоццоли
+                    Граначчи, Франческо
+                    Грегорио ди Чекко
+                    Джованни да Удине
+                    Джованни ди Паоло
+                    Джорджоне
+                    Парентино, Бернардо
+                    Пезеллино
+                    Пьетро Перуджино
+                    Перуцци, Бальдассаре
+                    Пизанелло
+                    Пинтуриккьо</p>
+                </div>
+              </div>
+
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 1500 по 1599 гг</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 1600 по 1699 гг</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 1700 по 1799 гг</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 1800 по 1899 гг</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 1900 по 1999 гг</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+
+              <div class="ac catalog__ac">
+                <h2 class="ac-header catalog__ac-header">
+                  <button type="button" class="ac-trigger catalog__ac-trigger">C 2000 г</button>
+                </h2>
+                <div class="ac-panel catalog__ac-panel">
+                  <p class="ac-text catalog__ac-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
     <div class="events">
 
@@ -219,6 +319,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/choices.min.js"></script>
+  <script src="libs/accordion.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
