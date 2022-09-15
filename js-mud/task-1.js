@@ -1,21 +1,21 @@
 function filter(obj, key, name) {
+  let newObj = [];
+  let values = Object.values(obj);
 
-  let rec = Object.values(obj);
-  for (let x of rec) {
-    if (x['name'] === name) {
-      console.log(`string "${name}" found, ${x.name}`);
+  for (let item of values) {
+    if (item["name"] === name) {
+      newObj.push(item);
+      return newObj;
     }
-    console.log(x);
-
-    // console.log(x['name']);
   }
+  return newObj;
 }
 
 let objects = [
-  { name: 'Василий', surname: 'Васильев' },
-  { name: 'Иван', surname: 'Иванов' },
-  { name: 'Пётр', surname: 'Петров' }
-  ]
+  { name: "Василий", surname: "Васильев" },
+  { name: "Иван", surname: "Иванов" },
+  { name: "Пётр", surname: "Петров" },
+];
 
-let result = filter(objects, 'name', 'Иван');
-// console.log(result);
+let result = filter(objects, "name", "Иван");
+console.log(result);
