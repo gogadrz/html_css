@@ -7,6 +7,7 @@
 
   --dark-bg-color: #000;
   --check-selected-color: #c283f3;
+  --link-color: #9d5cd0;
 }
 
 html {
@@ -660,4 +661,39 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   font-weight: 400;
   line-height: 38.13px;
   margin-bottom: 20px;
+}
+
+.catalog__ac-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog__ac-content-left {
+  width: 30%;
+
+}
+
+.catalog__ac-content-right {
+  width: 65%;
+}
+
+.catalog__content-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--dark-color);
+}
+
+.catalog__content-descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.79px;
+  color: var(--dark-color);
+}
+
+.catalog__content-link {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.79px;
+  color: var(--link-color);
 }
