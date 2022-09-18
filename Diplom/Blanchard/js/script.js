@@ -80,3 +80,20 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
   new Accordion('.catalog__accordion-container', {
 
   });
+
+// events swiper
+const eventsSwiper = new Swiper('.events__swiper', {
+  loop: true,
+  pagination: {
+    el: '.events__swiper-pagination',
+  },
+});
+
+// projects swiper
+const projectsSwiper = new Swiper('.projects__swiper', {
+  loop: true,
+  navigation: {
+    nextEl: '.projects__swiper-button-next',
+    prevEl: '.projects__swiper-button-prev',
+  },
+});

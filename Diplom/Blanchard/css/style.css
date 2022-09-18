@@ -660,9 +660,10 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   font-size: 28px;
   font-weight: 400;
   line-height: 38.13px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
+/* <<<<<<< Updated upstream */
 .catalog__ac-content {
   display: flex;
   justify-content: space-between;
@@ -670,6 +671,9 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 
 .catalog__ac-content-left {
   width: 30%;
+  background-color: #999;
+  outline: 2px solid #999;
+  outline-offset: 3px;
 
 }
 
@@ -678,7 +682,7 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 }
 
 .catalog__content-title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 32px;
   color: var(--dark-color);
@@ -696,4 +700,131 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   font-weight: 600;
   line-height: 21.79px;
   color: var(--link-color);
+}
+
+.catalog__ac {
+  border-left: 0;
+  border-right: 0;
+  margin-top: -1px;
+}
+/* ======= */
+.catalog__ac-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+/* >>>>>>> Stashed changes */
+}
+
+.ac
+.catalog__ac-trigger {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--dark-color);
+  padding: 20px 30px 20px 0;
+}
+
+.catalog__ac-item {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--dark-color);
+}
+
+.catalog__artist-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  color: var(--dark-color);
+}
+
+.catalog__artist-yearsoflife {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.34px;
+  color: #999;
+  margin-bottom: 0;
+}
+
+.catalog__artist-descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--dark-color);
+}
+
+/* ---------------------------------- */
+/* events */
+.events__container {
+  width: var(--container-mobile);
+}
+
+.events__time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.events__time time {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.34px;
+  color: #999;
+  text-align: right;
+  max-width: 60%;
+}
+
+.events__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  color: var(--dark-color);
+}
+
+.events__descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--dark-color);
+}
+
+.events__link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--link-color);
+}
+
+/* ---------------------------- */
+/* projects */
+.projects__title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38.13px;
+  color: var(--dark-color);
+}
+
+.projects__descr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--dark-color);
+}
+
+.projects__link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--link-color);
+}
+
+.projects__partner-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--dark-color);
+}
+
+.projects__swiper-wrapper {
+  /* position: relative; */
 }
