@@ -541,14 +541,22 @@
               что действия представителей оппозиции могут быть рассмотрены исключительно в разрезе маркетинговых
               и финансовых предпосылок. Банальные, но неопровержимые выводы, а также представители современных
               социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны
-              с не уникальными данными до степени совершённой неузнаваемости. Подробнее: blanchard-art.ru/projects/about
+              с не уникальными данными до степени совершённой неузнаваемости. Подробнее:
             </p>
             <a class="link projects__link" href="#">blanchard-art.ru/projects/about</a>
             <h4 class="title projects__partner-title">Партнёры проектов:</h4>
 
             <!-- Slider main container -->
             <div class="swiper projects__swiper">
-              <div class="swiper-button-prev projects__swiper-button-prev"></div>
+              <div class="swiper-button-prev projects__swiper-button-prev">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
+                    fill="#ECECEC" />
+                  <path d="M16 20L11 15L16 10" stroke="black" />
+                </svg>
+              </div>
+
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper projects__swiper-wrapper">
 
@@ -684,12 +692,16 @@
                   </svg>
                 </div>
 
-
-
               </div>
-              <div class="swiper-button-next projects__swiper-button-next"></div>
 
-
+              <div class="swiper-button-next projects__swiper-button-next">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
+                    fill="#ECECEC" />
+                  <path d="M14 20L19 15L14 10" stroke="black" />
+                </svg>
+              </div>
 
             </div>
 
@@ -702,6 +714,26 @@
     <!-- ------------------------------------------ -->
 
     <div class="feedback">
+      <div class="container-fluid feedback__container">
+        <div class="row feedback__row">
+          <div class="col-12 feedback__col">
+            <h4 class="title feedback__title">Шоурум &#8470;&nbsp;4</h4>
+            <p class="feedback__address">Леонтьевский переулок, дом 5/1</p>
+
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+              <label>
+                <input class="form__input-name" type="text" required placeholder="Имя*">
+              </label>
+              <label>
+                <input class="form__input-tel" type="tel" required placeholder="Телефон*">
+              </label>
+              <button class="btn form__btn-submit" type="submit">Заказать</button>
+            </form>
+
+            <h5 class="title feedback__subtitle">Связаться в один клик</h5>
+          </div>
+        </div>
+      </div>
 
     </div>
   </main>
