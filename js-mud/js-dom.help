@@ -1,0 +1,17 @@
+// создать элемент, но не поместить его в DOM
+document.createElement('div')
+
+// сначала создать h1
+let h1 = document.createElement('h1')
+
+// присвоить ему значение
+h1.textContent = 'Список покупок'
+
+// добавить в DOM
+document.body.append(h1)
+
+
+// добавим нумерованный список
+let ol = document.createElement('ol')
+
+document.body.append(ol)
