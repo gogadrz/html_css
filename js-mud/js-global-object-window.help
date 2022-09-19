@@ -1,0 +1,10 @@
+Global namespace pollution - загрязнение глобальной области
+
+(function() {
+  // здесь код
+})();
+// сразу же вызывается объявленная анонимная функция
+// в window она не попадает!
+
+IIFE (Immediately Invoked Function Expression)
+Объявление и немедленный вызов функции

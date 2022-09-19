@@ -1,0 +1,13 @@
+body {
+  padding: 25px;
+}
+.color-block {
+  width: 100px;
+  height: 100px;
+  outline: 1px solid orange;
+}
+
+.color-input {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,94 @@
+// textContent и innerHTML (textContent игнорирует HTML теги)
+
+// создать элемент, но не поместить его в DOM
+document.createElement('div')
+
+// сначала создать h1
+let h1 = document.createElement('h1')
+
+// присвоить ему значение
+h1.textContent = 'Список покупок'
+
+// добавить в DOM (append - в конец, prepend - в начало)
+//                 ====================================
+document.body.append(h1)
+
+
+// добавим нумерованный список
+let ol = document.createElement('ol')
+
+document.body.append(ol)
+
+///////////////////////////////////////
+let list = [
+    document.createElement('li'),
+    document.createElement('li'),
+    document.createElement('li'),
+]
+
+list[0].textContent = 'циркулярная пила'
+list[1].textContent = 'молоко'
+list[2].textContent = 'хлеб'
+
+// добавится в обратном порядке
+ol.prepend(list[0])
+ol.prepend(list[1])
+ol.prepend(list[2])
+
+// метод before - вставит до
+// метод after - вставит после
+
+let eggs = document.createElement('li')
+eggs.textContent = 'Яйца'
+
+// добавит перед молоком list[1]
+list[1].before(eggs)
+
+let sausage = document.createElement('li')
+sausage.textContent = 'Колбаса'
+
+// добавит после циркулярной пилы
+list[0].after(sausage)
+
+// переставит после хлеба (именно переставит, а не скопирует!!!!!)
+// (объект передается по ссылке, а не копируется)
+// если вставить элемент, который уже есть в DOM, он будет перемещен // на новое место!!!
+list[2].after(sausage)
+
+
+/////////////////////////////////////////
+// replaceWith - заменить
+
+let breadBought = document.createElement('li')
+breadBought.innerHTML = '<strike>Хлеб</strike>'
+
+ol.children[0].replaceWith(breadBought)
+
+// remove - удалить
+ol.children[4].remove()
+
+/////////////////////////////////////////
+ol.id = 'qwe' - добавит id к тегу
+ol.reversed = true - развернет список
+ol.start = 20 - список начнется с 20 (нумерация списка)
+ol.removeAttribute('start') - удалит атрибут start
+
+ol.classList.add('class1') - добавит класс к элементу
+ol.classList.remove('class1') - удалит класс у элемента
+ol.classList.toggle('class1') - переключит класс
+ol.classList.contains('class1') - проверить наличие класса
+
+/////////////////////////////////////////
+document.querySelector('#text') - найти элемент по id
+documetn.querySelectorAll('.news__list .list__item) - найдет все элементы (по классу)
+
+document.getElementById('text') - поиск элемента по id
+работает быстрее чем querySelector, для поиска по id лучше использовать его
+
+
+/// редкоиспользуемые методы:
+document.getElementsByClassName('input__control') - достает все элементы с определенным классом
+
+document.getElementByTagName('div') - достает все элементы с определенным тэгом
+
+

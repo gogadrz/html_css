@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document JS</title>
+  <script>
+    // что бы работало, нужно или скрипт поместить перед закрывающим /body
+    // или указать что выполнять скрипт после загрузки документа, вот так
+    // однако лучший вариант, это вставить в тег 'script' аттрибут 'dever'
+    // <script dever src=''></ script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let countDisplay = document.querySelector('.count-display');
+      let incBtn = document.querySelector('.btn-primary')
+
+      function incCount() {
+        let currentCount = parseInt(countDisplay.textContent);
+        countDisplay.textContent = currentCount + 1;
+      }
+
+      incBtn.addEventListener('click', incCount);
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <p class="count-display">1</p>
+    <button class="btn btn-primary">+1</button>
+  </div>
+</body>
+</html>
