@@ -48,8 +48,9 @@
     let deleteButton = document.createElement('button');
 
     // стилизуем
-    item.classList.add('List-group-item', 'd-flex', 'justify-content-between','align-items-center');
+    item.classList.add('List-group-item', 'd-flex', 'justify-content-between','align-items-center', 'm-1', 'p-2', 'border');
     item.textContent = name;
+    item.style.border = "1px solid gray;"
 
     buttonGroup.classList.add('btn-group', 'btn-group-sm');
     doneButton.classList.add('btn', 'btn-success');
@@ -76,12 +77,32 @@
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
 
-    //tmp
-    let todoItems =
-
     container.append(todoAppTitle);
     container.append(todoItemForm.form);
     container.append(todoList);
-  });
 
+    todoItemForm.form.addEventListener('submit', function(e) {
+
+      e.preventDefault(); // запретить перезагрузку страницы
+
+      if (!todoItemForm.input.value) {
+        return;
+      }
+
+      let todoItem = createTodoItem(todoItemForm.input.value);
+
+      todoItem.doneButton.addEventListener('click', function() {
+        todoItem.item.classList.toggle('list-group-item-success');
+      });
+
+      todoItem.deleteButton.addEventListener('click', function() {
+        if (confirm('Вы уверены?')) {
+          todoItem.item.remove();
+        }
+      })
+
+      todoList.append(todoItem.item);
+      todoItemForm.input.value = '';
+    })
+  });
 })();
