@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="libs/accordion.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+  </script>
 </head>
 
 <body>
@@ -731,10 +733,20 @@
             </form>
 
             <h5 class="title feedback__subtitle">Связаться в один клик</h5>
+
+            <div class="feedback__social-wrapper">
+              <a href="https://www.whatsapp.com/">
+                <img class="feedback__social-icon" src="img/whatsapp-icon-320.png" alt="WhatsApp">
+              </a>
+              <a href="https://telegram.org/">
+                <img class="feedback__social-icon" src="img/telegram-icon-320.png" alt="Telegram">
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
-
+      <div class="feedback__map" id="map-1"></div>
     </div>
   </main>
 

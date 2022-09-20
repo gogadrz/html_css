@@ -97,3 +97,22 @@ const projectsSwiper = new Swiper('.projects__swiper', {
     prevEl: '.projects__swiper-button-prev',
   },
 });
+
+// yandex map
+ymaps.ready(init);
+  function init(){
+    var myMap = new ymaps.Map("map-1", {
+        center: [55.76, 37.64],
+        zoom: 7,
+        controls: []
+    });
+  }
+  // ymaps.ready(function () {
+  //   var myMap = new ymaps.Map('map', {
+  //           center: [55.751574, 37.573856],
+  //           zoom: 9,
+  //           controls: []
+  //       }, {
+  //           // searchControlProvider: 'yandex#search'
+  //       });
+// });

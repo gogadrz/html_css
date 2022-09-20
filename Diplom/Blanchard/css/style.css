@@ -861,3 +861,21 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 .form__btn-submit {
   color: var(--link-color);
 }
+
+/* feedbadk map */
+.feedback__map {
+  width: 100%;
+  min-height: 320px;
+}
+
+#map-1 > ymaps > ymaps > ymaps > ymaps.ymaps-2-1-79-copyrights-pane > ymaps.ymaps-2-1-79-map-copyrights-promo {
+  display: none;
+}
+
+#map-1 > ymaps > ymaps > ymaps > ymaps.ymaps-2-1-79-copyrights-pane > ymaps:nth-child(1) > ymaps > ymaps.ymaps-2-1-79-copyright__wrap {
+  display: none;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
