@@ -49,6 +49,7 @@
 
     // стилизуем
     item.classList.add('List-group-item', 'd-flex', 'justify-content-between','align-items-center', 'm-1', 'p-2', 'border');
+    // item.classList.add('List-group-item', 'd-flex', 'justify-content-between','align-items-center');
     item.textContent = name;
     item.style.border = "1px solid gray;"
 
@@ -70,10 +71,9 @@
     };
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    let container = document.getElementById('todo-app');
+  function createTodoApp(container, title = 'Список дел') {
 
-    let todoAppTitle = createAppTitle('Список дел');
+    let todoAppTitle = createAppTitle(title);
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
 
@@ -104,5 +104,7 @@
       todoList.append(todoItem.item);
       todoItemForm.input.value = '';
     })
-  });
+  }
+
+  window.createTodoApp = createTodoApp;
 })();
