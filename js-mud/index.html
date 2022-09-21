@@ -1,4 +1,13 @@
-var session = {
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorage</title>
+</head>
+<body>
+  <script>
+  let session = {
   'screens': [],
   'state': true
 };
@@ -20,3 +29,6 @@ var restoredSession = JSON.parse(localStorage.getItem('session'));
 // Переменная restoredSession содержит объект, который был сохранён
 // в localStorage
 console.log(restoredSession);
+  </script>
+</body>
+</html>
