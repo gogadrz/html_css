@@ -97,7 +97,7 @@
     };
   }
 
-  function createTodoApp(container, title = 'Список дел', tasks = []) {
+  function createTodoApp(container, title = 'Список дел', tasks = [], storageKey = 'me') {
 
     let todoAppTitle = createAppTitle(title);
     let todoItemForm = createTodoItemForm();
@@ -108,8 +108,11 @@
     container.append(todoItemForm.form);
     container.append(todoList);
 
-    if (tasks.length > 0) {
-      for (let item of tasks) {
+    let restoredSession = JSON.parse(localStorage.getItem(storageKey));
+    console.log('restored:', restoredSession);
+
+    if (restoredSession !== null) {
+      for (let item of restoredSession) {
         addItem(item);
       }
     }
@@ -122,31 +125,55 @@
         return;
       }
 
-      addItem({name: todoItemForm.input.value, done: false});
+      addItem({name: todoItemForm.input.value, done: false}, storageKey);
 
     });
 
-    function addItem(item) {
+    function addItem(item, storageKey) {
+      console.log('storageKey:', storageKey);
+
       let todoItem = createTodoItem(item.name);
+      let done = false;
 
       if (item.done) {
         todoItem.item.classList.add('list-group-item-success');
+        done = true;
       }
 
       todoItem.doneButton.addEventListener('click', function() {
         todoItem.item.classList.toggle('list-group-item-success');
+        done = !done;
+        console.log('click gotovo');
       });
 
       todoItem.deleteButton.addEventListener('click', function() {
         if (confirm('Вы уверены?')) {
           todoItem.item.remove();
         }
+        console.log('clock udalit');
       })
 
       todoList.append(todoItem.item);
       todoItemForm.input.value = '';
-    }
 
+      // update storage
+      let storage = []
+      let restoredSession = JSON.parse(localStorage.getItem(storageKey));
+      console.log('Indise addItem(). restored:', restoredSession);
+
+      if (restoredSession !== null) {
+        for (let item of restoredSession) {
+          storage.push(item);
+        }
+      }
+
+      // done = todoItem.item.classList.contains('list-group-item-success');
+      let text = todoItem.item.innerText;
+      let textToStorage = text.slice(0, text.indexOf('\n'));
+
+      storage.push({ 'name': textToStorage, done: done});
+      localStorage.setItem(storageKey, JSON.stringify(storage));
+    }
   }
 
   window.createTodoApp = createTodoApp;
