@@ -1,4 +1,6 @@
 (function() {
+
+  let storageKey = null;
   // создать заголовок
   function createAppTitle(title) {
     let appTitle = document.createElement('h2');
@@ -97,23 +99,22 @@
     };
   }
 
-  function createTodoApp(container, title = 'Список дел', tasks = [], storageKey = 'me') {
+  function createTodoApp(container, title = 'Список дел', tasks = [], Key = 'me') {
+
+    storageKey = Key;
 
     let todoAppTitle = createAppTitle(title);
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
 
-
     container.append(todoAppTitle);
     container.append(todoItemForm.form);
     container.append(todoList);
 
-    let restoredSession = JSON.parse(localStorage.getItem(storageKey));
-    console.log('restored:', restoredSession);
-
-    if (restoredSession !== null) {
-      for (let item of restoredSession) {
-        addItem(item);
+    let storageItems = getItemsFromStorage(storageKey)
+    if (storageItems !== null) {
+      for (let itm of storageItems) {
+        addItem(itm);
       }
     }
 
@@ -125,55 +126,85 @@
         return;
       }
 
+      addItemToStorage({name: todoItemForm.input.value, done: false}, storageKey);
       addItem({name: todoItemForm.input.value, done: false}, storageKey);
-
     });
 
     function addItem(item, storageKey) {
-      console.log('storageKey:', storageKey);
+      console.log('---addItem', storageKey);
 
       let todoItem = createTodoItem(item.name);
-      let done = false;
 
       if (item.done) {
         todoItem.item.classList.add('list-group-item-success');
-        done = true;
       }
 
       todoItem.doneButton.addEventListener('click', function() {
         todoItem.item.classList.toggle('list-group-item-success');
-        done = !done;
         console.log('click gotovo');
+        console.log(item.name, todoItem.item.classList.contains('list-group-item-success'));
+        setDoneInStorage(item.name, todoItem.item.classList.contains('list-group-item-success'));
       });
 
       todoItem.deleteButton.addEventListener('click', function() {
         if (confirm('Вы уверены?')) {
           todoItem.item.remove();
+          deleteFromStorage(item.name);
         }
         console.log('clock udalit');
       })
 
       todoList.append(todoItem.item);
       todoItemForm.input.value = '';
-
-      // update storage
-      let storage = []
-      let restoredSession = JSON.parse(localStorage.getItem(storageKey));
-      console.log('Indise addItem(). restored:', restoredSession);
-
-      if (restoredSession !== null) {
-        for (let item of restoredSession) {
-          storage.push(item);
-        }
-      }
-
-      // done = todoItem.item.classList.contains('list-group-item-success');
-      let text = todoItem.item.innerText;
-      let textToStorage = text.slice(0, text.indexOf('\n'));
-
-      storage.push({ 'name': textToStorage, done: done});
-      localStorage.setItem(storageKey, JSON.stringify(storage));
     }
+  }
+
+  // localStorage //////////////////////
+  // добавить элемент в localStorage
+  function addItemToStorage(item, storageKey) {
+    console.log('indide addItemToStorage:', item, storageKey);
+
+    if (localStorage.getItem(storageKey) === null) {
+      console.log('ключ не найден');
+
+      let storageData = new Array(item);
+      localStorage.setItem(storageKey, JSON.stringify(storageData));
+    }
+    else
+    {
+      let storageData = JSON.parse(localStorage.getItem(storageKey));
+      storageData.push(item);
+      console.log('storageData:', storageData);
+      localStorage.setItem(storageKey, JSON.stringify(storageData));
+    }
+  }
+
+  // вернуть содержимое localStorage по ключу
+  function getItemsFromStorage(storageKey) {
+    return JSON.parse(localStorage.getItem(storageKey));
+  }
+
+  // установить флаг "выполнено"
+  function setDoneInStorage(name, flag) {
+    let storageData = getItemsFromStorage(storageKey);
+    let msg = `storageKey: ${storageKey}, name: ${name}, flag: ${flag}`;
+    console.log(msg);
+
+    for (let item of storageData) {
+      if (item.name === name) {
+          item.done = flag;
+      }
+    }
+
+    localStorage.setItem(storageKey, JSON.stringify(storageData));
+  }
+
+  // удалить элемент из localStorage
+  function deleteFromStorage(name) {
+    console.log(name, 'will be deleted');
+
+    let storageData = getItemsFromStorage(storageKey);
+    localStorage.setItem(storageKey, JSON.stringify(storageData.filter((n) => {return n.name !== name})));
   }
 
   window.createTodoApp = createTodoApp;
