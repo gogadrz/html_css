@@ -42,11 +42,11 @@ const swiper = new Swiper('.hero__swiper', {
 
 
 // set .hero height
-let heroBlock = document.querySelector('.hero');
-let headerHeight = document.querySelector('.header').clientHeight;
-let swiperHeight = document.querySelector('.swiper').clientHeight;
+// let heroBlock = document.querySelector('.hero');
+// let headerHeight = document.querySelector('.header').clientHeight;
+// let swiperHeight = document.querySelector('.swiper').clientHeight;
 
-heroBlock.style.height = swiperHeight + 'px';
+// heroBlock.style.height = swiperHeight + 'px';
 
 // gallery
 // select
@@ -78,7 +78,7 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 
 // accordion
   new Accordion('.catalog__accordion-container', {
-
+    // collapse: false,
   });
 
 // events swiper

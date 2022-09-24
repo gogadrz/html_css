@@ -152,7 +152,10 @@ body {
 /* ------------------------ */
 /* header */
 .header {
+  position: absolute;
   background-color: var(--dark-bg-color);
+  width: 100%;
+  z-index: 10;
 }
 
 .header__row {
@@ -246,6 +249,7 @@ body {
   transition: visibility .3s ease-in-out, transform .3s ease-in-out;
   background: rgba(0, 0, 0, 0.9);
   padding: 46px 15px;
+  z-index: 10;
 }
 
 .nav__list {
@@ -282,12 +286,13 @@ body {
 /* -------------------------------------------- */
 /* main */
 .main {
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   /* height: 150%; */
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 /* -------------------------------------------- */
@@ -341,9 +346,9 @@ body {
 .hero__content-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .hero__title {
@@ -351,7 +356,8 @@ body {
 }
 
 .hero__descr {
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
+  margin-bottom: 40px;
 }
 
 .hero__btn {
@@ -648,7 +654,7 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 /* --------------------------------------- */
 /* catalog */
 .catalog {
-  padding-top: 50px;
+  padding-top: 49px;
 }
 
 .catalog__container {
@@ -663,7 +669,6 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   margin-bottom: 14px;
 }
 
-/* <<<<<<< Updated upstream */
 .catalog__ac-content {
   display: flex;
   justify-content: space-between;
@@ -705,27 +710,75 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 .catalog__ac {
   border-left: 0;
   border-right: 0;
-  margin-top: -1px;
+  margin-top: -3px;
 }
-/* ======= */
+
 .catalog__ac-list {
   list-style: none;
+}
+
+#ac-panel-0 > ul {
+  padding-top: 20px;
+  padding-bottom: 21px;
   padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-/* >>>>>>> Stashed changes */
 }
 
 .ac
 .catalog__ac-trigger {
+  font-family: 'OpenSans';
   font-size: 18px;
   font-weight: 600;
   line-height: 32px;
   color: var(--dark-color);
-  padding: 20px 30px 20px 0;
+  padding: 19px 30px 21px 0;
+  box-sizing: border-box;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease-in-out;
+}
+
+.catalog__ac-trigger-icon {
+  position: absolute;
+  top: calc(50% - 15px);
+  right: 0;
+}
+
+.catalog__ac-trigger-icon circle {
+  transition: fill .3s ease-in-out, stroke .3s ease-in-out;
+}
+
+.ac
+.catalog__ac-trigger[aria-expanded="true"]
+.catalog__ac-trigger-icon circle {
+  fill: #d1a9f0;
+  stroke: #9d5cd0;
+}
+
+.catalog__ac-trigger-icon path {
+  transition: transform .3s ease-in-out;
+  transform-origin: 50%;
+}
+.ac
+.catalog__ac-trigger[aria-expanded="true"]
+.catalog__ac-trigger-icon path {
+  transform: rotateX(180deg);
+}
+
+.ac
+.catalog__ac-trigger[aria-expanded="true"] {
+  border-color: #9d5cd0;
+}
+
+.ac .ac-trigger::after {
+  content: '';
+}
+
+.ac.is-active>.ac-header .ac-trigger::after {
+  content: '';
 }
 
 .catalog__ac-item {
+  font-family: 'OpenSans';
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
@@ -878,4 +931,14 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 
 [class*="ground-pane"] {
   filter: grayscale(1);
+}
+
+/* ------------------------------------------------ */
+/* footer */
+.footer {
+  background-color: var(--dark-bg-color);
+}
+
+.footer__container {
+  width: var(--container-mobile);
 }
