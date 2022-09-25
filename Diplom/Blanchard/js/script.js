@@ -83,6 +83,7 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 
 // events swiper
 const eventsSwiper = new Swiper('.events__swiper', {
+  // autoHeight: true,
   loop: true,
   pagination: {
     el: '.events__swiper-pagination',
@@ -116,3 +117,22 @@ ymaps.ready(init);
   //           // searchControlProvider: 'yandex#search'
   //       });
 // });
+
+
+// поправить высоту блоков свайпера в событиях
+let slide = document.querySelectorAll('.events__swiper-slide');
+let maxSlideHeight = 0;
+
+slide.forEach(function(elem) {
+  console.log(elem, elem.clientHeight);
+  if (elem.clientHeight > maxSlideHeight) {
+    maxSlideHeight = elem.clientHeight;
+  }
+  console.log('самый высокий блок:', maxSlideHeight);
+
+})
+console.log('---------------------------------------------');
+slide.forEach(function(elem) {
+  console.log(elem, maxSlideHeight + 'px');
+  elem.style.height = maxSlideHeight + 'px';
+})

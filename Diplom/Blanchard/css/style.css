@@ -655,6 +655,7 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 /* catalog */
 .catalog {
   padding-top: 49px;
+  margin-bottom: 50px;
 }
 
 .catalog__container {
@@ -669,9 +670,19 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   margin-bottom: 14px;
 }
 
+.catalog__accordion-container {
+  margin-bottom: 49px;
+}
+
 .catalog__ac-content {
   display: flex;
-  justify-content: space-between;
+}
+
+.ac .ac-panel .ac-text {
+  padding-left: 4px;
+  padding-top: 29px;
+  padding-right: 0;
+  padding-bottom: 32px;
 }
 
 .catalog__ac-content-left {
@@ -679,28 +690,35 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   background-color: #999;
   outline: 2px solid #999;
   outline-offset: 3px;
-
+  margin-right: 10%;
 }
 
 .catalog__ac-content-right {
   width: 65%;
+  margin-top: -4px;
+  margin-bottom: -8px;
 }
 
 .catalog__content-title {
-  font-size: 14px;
+  font-family: 'OpenSans';
+  font-size: 18px;
   font-weight: 600;
   line-height: 32px;
+  margin-bottom: 6px;
   color: var(--dark-color);
 }
 
 .catalog__content-descr {
+  font-family: 'OpenSans';
   font-size: 16px;
   font-weight: 400;
   line-height: 21.79px;
+  margin-bottom: 5px;
   color: var(--dark-color);
 }
 
 .catalog__content-link {
+  font-family: 'OpenSans';
   font-size: 16px;
   font-weight: 600;
   line-height: 21.79px;
@@ -785,11 +803,24 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   color: var(--dark-color);
 }
 
+.catalog__img img {
+  margin-bottom: 21px;
+}
+
 .catalog__artist-title {
   font-size: 24px;
   font-weight: 600;
   line-height: 32.68px;
   color: var(--dark-color);
+  margin-bottom: 2px;
+}
+
+.catalog__time-wrapper {
+  margin-bottom: 11px;
+}
+
+.catalog__artist-title+time {
+  margin-bottom: 10px;
 }
 
 .catalog__artist-yearsoflife {
@@ -809,13 +840,31 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
 
 /* ---------------------------------- */
 /* events */
+.events {
+  margin-bottom: 44px;
+}
+
 .events__container {
   width: var(--container-mobile);
+}
+
+.events__swiper {
+  border: 1px solid #cacaca;
+  margin-bottom: 12px;
+}
+
+.events__swiper-slide {
+  height: 100%;
+}
+
+.events__img img {
+  margin-bottom: 18px;
 }
 
 .events__time {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 9px;
 }
 
 .events__time time {
@@ -824,14 +873,30 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   line-height: 16.34px;
   color: #999;
   text-align: right;
-  max-width: 60%;
+  max-width: 58%;
+  margin-right: 6%;
+}
+
+.events__time--max-width-45 time {
+  max-width: 45%;
+}
+
+.events__time--max-width-65 time {
+  max-width: 65%;
 }
 
 .events__title {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32.68px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38.13px;
   color: var(--dark-color);
+  margin-bottom: 12px;
+}
+
+.events__descr-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px 0 23px;
 }
 
 .events__descr {
@@ -839,22 +904,69 @@ body > main > div.gallery > div > div > div > div.gallery__select-block > div > 
   font-weight: 400;
   line-height: 32px;
   color: var(--dark-color);
+  margin-bottom: 63px;
 }
 
 .events__link {
+  display: inline-block;
+  position: absolute;
+  bottom: 48px;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
   color: var(--link-color);
+  padding-left: 6px;
+}
+
+.events__link::after {
+  position: absolute;
+  bottom: 2px;
+  left: 7px;
+  content: '';
+  width: 91%;
+  height: 1px;
+  background-color: var(--link-color);
+}
+
+.events__subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  color: var(--dark-color);
+  margin-bottom: 5px;
+}
+
+.events__swiper-pagination {
+  position: static;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  background-color: #cacaca;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap,7.5px);
+}
+
+body > main > div.events > div > div > div > div.swiper-pagination.events__swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #666;
 }
 
 /* ---------------------------- */
 /* projects */
+.projects__container {
+  width: var(--container-mobile);
+}
+
 .projects__title {
   font-size: 28px;
   font-weight: 400;
   line-height: 38.13px;
   color: var(--dark-color);
+  margin-bottom: 12px;
 }
 
 .projects__descr {
