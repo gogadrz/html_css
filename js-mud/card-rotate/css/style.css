@@ -42,7 +42,7 @@
   border-radius: 20px;
 
   }
-  .card__back{
+  .card__back {
   position: absolute;
   top: 0;
   z-index: 0;
@@ -60,6 +60,9 @@
   text-align: center;
   align-self: center;
   }
+  .card__index {
+    visibility: hidden;
+  }
   /* .card:hover .card__back {
   transform: rotateY(0deg);
   z-index: 2;
@@ -69,12 +72,17 @@
   z-index: -1;
   } */
 
-
   .card--open .card__back {
     transform: rotateY(0deg);
     z-index: 2;
+    cursor: not-allowed;
   }
 
+  .card--open:hover {
+    opacity: 1;
+    transition: none;
+    cursor: default;
+  }
   .card--open .card__front {
     transform: rotateY(180deg);
     z-index: -1;
