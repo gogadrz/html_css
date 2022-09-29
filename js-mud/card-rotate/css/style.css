@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   justify-content: center;
   padding-top: 20px;
@@ -127,15 +128,17 @@
 /* form block */
 .form {
   display: flex;
-  position: absolute;
+  position: relative;
+  top: 15vh;
   flex-direction: column;
   width: 300px;
   padding: 38px 30px 20px 30px;
-  background-color: #000;
-  /* opacity: 0.4; */
+  background-color: green;
+  opacity: 0.7;
   border-radius: 10px;
   margin-right: 58px;
   z-index: 5;
+  color: white;
 }
 
 .form__legend {

@@ -1,7 +1,7 @@
 (() => {
   // const PAIRS_OF_NUMBERS = 8;
-  const ROW = 2;
-  const COL = 8;
+  let ROW = 2;
+  let COL = 2;
 
   const container = document.querySelector(".container");
   let cardsArray = [];
@@ -136,6 +136,50 @@
     return gameOverBlock;
   }
 
+  function createStartForm() {
+    const formLegend = document.createElement('legend');
+    formLegend.classList.add('form__legend');
+    formLegend.textContent = 'Задайте размер игрового поля:';
+
+    const inputHorizontal = document.createElement('input');
+    inputHorizontal.classList.add('horizontal');
+    inputHorizontal.name = 'horizontal';
+    inputHorizontal.type = 'number';
+    inputHorizontal.placeholder = 'По горизонтали';
+
+    const inputVertical = document.createElement('input');
+    inputVertical.classList.add('vertical');
+    inputVertical.name = 'vertical';
+    inputVertical.type = 'number';
+    inputVertical.placeholder = 'По вертикали';
+
+    const formBtn = document.createElement('button');
+    formBtn.classList.add('form__btn');
+    formBtn.type = 'submit';
+    formBtn.textContent = 'Играть';
+
+    const form = document.createElement('form');
+    form.classList.add('form');
+    form.id = 'form';
+    form.action = '#';
+    form.addEventListener('submit', initGame);
+
+    form.append(formLegend);
+    form.append(inputHorizontal);
+    form.append(inputVertical);
+    form.append(formBtn);
+
+    return form;
+  }
+
+  function getStartData() {
+    const startForm = createStartForm();
+    container.append(startForm)
+    COL = parseInt(startForm.horizontal.value);
+    ROW = parseInt(startForm.vertical.value);
+    return { 'hor': COL, 'vert': ROW };
+  }
+
   function showGameOver() {
     let gameOverForm = createGameOverBlock();
     container.append(gameOverForm);
@@ -148,12 +192,10 @@
   }
 
   function initGame() {
+    console.log(getStartData());
+
     shuffle(fillArray(cardsArray, ROW * COL));
     let cardIndex = 0;
-    // const viewportWidth = container.clientWidth;
-    // const viewportHeight = container.clientHeight;
-    // console.log(viewportWidth);
-    // console.log(viewportHeight);
 
     for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
       const cardList = document.createElement("ul");
@@ -169,10 +211,8 @@
     const fSize = getFontSize();
     const x = container.querySelectorAll(".card__back");
     x.forEach(function (el) {
-      el.style;
+      el.style.fontSize = fSize;
     });
-
-    getFontSize();
   }
 
   function restartGame() {
@@ -181,6 +221,8 @@
     prevCard = null;
     prevCardIndex = null;
     container.innerHTML = "";
+    const startForm = createStartForm();
+    container.append(startForm)
     initGame();
   }
 
