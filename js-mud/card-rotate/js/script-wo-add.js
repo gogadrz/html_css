@@ -1,16 +1,13 @@
 (() => {
-  // const PAIRS_OF_NUMBERS = 8;
-  const ROW = 2;
-  const COL = 8;
-
+  const PAIRS_OF_NUMBERS = 8;
   const container = document.querySelector(".container");
   let cardsArray = [];
 
   let prevCard = null;
   let prevCardIndex = null;
 
-  function fillArray(arr, totalItems) {
-    for (let index = 1; index <= totalItems / 2; index++) {
+  function fillArray(arr, pairsCount) {
+    for (let index = 1; index <= pairsCount; index++) {
       arr.push({ suit: index, opened: false });
       arr.push({ suit: index, opened: false });
     }
@@ -40,7 +37,6 @@
     const cardBack = document.createElement("div");
     cardBack.classList.add("card__back");
     cardBack.textContent = cardSuit;
-    // cardBack.style.fontSize = 100 / (COL + 1) + "vh";
 
     const cardIndex = document.createElement("div");
     cardIndex.classList.add("card__index");
@@ -48,8 +44,6 @@
 
     const card = document.createElement("li");
     card.classList.add("card");
-    card.style.width = 80 / COL + "vw";
-    card.style.height = 80 / ROW + "vh";
 
     card.append(cardFront);
     card.append(cardBack);
@@ -97,12 +91,8 @@
     }
 
     if (gameOver()) {
-      let list = container.querySelectorAll(".list");
-
-      list.forEach(function (el) {
-        el.classList.add("finished");
-      });
-      // list.classList.add("finished");
+      let list = container.querySelector(".list");
+      list.classList.add("finished");
 
       setTimeout(() => showGameOver(), 1000);
     }
@@ -114,7 +104,7 @@
       if (iCard.opened) openedCardCnt++;
     }
 
-    return openedCardCnt === ROW * COL;
+    return openedCardCnt === PAIRS_OF_NUMBERS * 2;
   }
 
   function createGameOverBlock() {
@@ -141,38 +131,18 @@
     container.append(gameOverForm);
   }
 
-  function getFontSize() {
-    const hSize = parseInt(document.querySelector(".card").clientHeight);
-    const wSize = parseInt(document.querySelector(".card").clientWidth);
-    return Math.min(hSize, wSize) - 4 + "px";
-  }
-
   function initGame() {
-    shuffle(fillArray(cardsArray, ROW * COL));
-    let cardIndex = 0;
-    // const viewportWidth = container.clientWidth;
-    // const viewportHeight = container.clientHeight;
-    // console.log(viewportWidth);
-    // console.log(viewportHeight);
+    shuffle(fillArray(cardsArray, PAIRS_OF_NUMBERS));
 
-    for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
-      const cardList = document.createElement("ul");
-      cardList.classList.add("list");
-      container.append(cardList);
+    const cardList = document.createElement("ul");
+    cardList.classList.add("list");
 
-      for (let colIndex = 0; colIndex < COL; colIndex++) {
-        let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
-        cardList.append(card);
-      }
+    container.append(cardList);
+
+    for (let cardIndex = 0; cardIndex < PAIRS_OF_NUMBERS * 2; cardIndex++) {
+      let card = createCard(cardsArray[cardIndex].suit, cardIndex);
+      cardList.append(card);
     }
-
-    const fSize = getFontSize();
-    const x = container.querySelectorAll(".card__back");
-    x.forEach(function (el) {
-      el.style;
-    });
-
-    getFontSize();
   }
 
   function restartGame() {
