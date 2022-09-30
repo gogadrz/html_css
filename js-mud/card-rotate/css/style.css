@@ -104,12 +104,12 @@
 /* start game */
 .modal-start {
   display: flex;
-  justify-content: center;
   position: fixed;
-  left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
+  left: 0;
+  justify-content: center;
   height: 100vh;
 	width: 100%;
 	opacity: 0;
@@ -120,14 +120,14 @@
 
 .start-form {
   display: flex;
+	display: none;
   position: absolute;
+  top: 25vh;
   flex-direction: column;
   align-items: center;
 	justify-content: center;
-	display: none;
   z-index: 200;
   cursor: default;
-  top: 25vh;
 }
 
 .start-form__legend {
@@ -178,12 +178,12 @@ input {
 
 /* play again */
 .modal-again {
+	display: flex;
   position: fixed;
-	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	display: flex;
+	left: 0;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
@@ -195,9 +195,9 @@ input {
 }
 
 .modal-again__form {
+	display: none;
 	align-items: center;
 	justify-content: center;
-	display: none;
   cursor: default;
   z-index: 200;
 }
@@ -214,11 +214,28 @@ input {
   flex-direction: column;
 }
 
+.modal-again__subtitle {
+  font-size: 8vw;
+  color: green;
+  opacity: .7;
+  user-select: none;
+  visibility: hidden;
+  opacity: 0;
+  margin: 0;
+}
+
+.modal-subtitle--visible {
+  visibility: visible;
+  opacity: .7;
+}
+
 .modal-again__title {
   font-size: 8vw;
   color: green;
   opacity: .7;
   user-select: none;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .modal-again__sumbit-btn {
@@ -238,4 +255,21 @@ input {
 }
 .modal-again__sumbit-btn:hover {
   background-color: #FF5C00;
+}
+
+/* timer */
+.timer {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+
+.timer__counter {
+  color: green;
+  font-size: xx-large;
+}
+
+.color-orange {
+  color: #FF5C00;
+  transition: color .3s ease-in-out;
 }

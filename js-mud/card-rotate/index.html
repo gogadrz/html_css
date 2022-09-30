@@ -14,20 +14,25 @@
   <div class="modal-start">
     <form class="start-form" id="start-form" action="#" onsubmit="return false">
       <legend class="start-form__legend">Задайте размер игрового поля:</legend>
-      <input class="start-form__hor_size" name="hor_size" type="number" placeholder="По вертикали">
-      <input class="start-form__vert_size" name="vert_size" type="number" placeholder="По горизонтали">
+      <input class="start-form__hor_size" name="hor_size" type="number" placeholder="По горизонтали">
+      <input class="start-form__vert_size" name="vert_size" type="number" placeholder="По вертикали">
       <button class="start-form__submit-btn" type="submit">Играть</button>
     </form>
   </div>
 
   <div class="modal-again">
     <div class="modal-again__form">
+      <h2 class="modal-again__subtitle">Время вышло!</h2>
       <h1 class="modal-again__title">Игра окончена!</h1>
       <button class="modal-again__sumbit-btn" type="submit">Сыграть еще раз</button>
     </div>
   </div>
 
   <div class="container__game"></div>
+
+  <div class="timer">
+    <div class="timer__counter"></div>
+  </div>
 
 </body>
 

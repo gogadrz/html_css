@@ -1,14 +1,22 @@
 (() => {
-  let ROW = 2;
-  let COL = 2;
+  const TIMER_START_VALUE = 60;
+  const DEFAULT_WIDTH = 4;
+  const DEFAULT_HEIGHT = 4;
+
+  let heightGameField = DEFAULT_HEIGHT;
+  let widthGameField = DEFAULT_WIDTH;
+
+  let timerValue = TIMER_START_VALUE;
+  let timerId = null;
 
   const containerGame = document.querySelector(".container__game");
-  const againBtn = document.querySelector('.modal-again__sumbit-btn');
-  const modalAgain = document.querySelector('.modal-again');
-  const modal = document.querySelector('.modal-again__form');
-  const modalStart = document.querySelector('.modal-start');
-  const startForm = document.querySelector('.start-form');
-  const startBtn = startForm.querySelector('.start-form__submit-btn');
+  const againBtn = document.querySelector(".modal-again__sumbit-btn");
+  const modalAgain = document.querySelector(".modal-again");
+  const modal = document.querySelector(".modal-again__form");
+  const modalStart = document.querySelector(".modal-start");
+  const startForm = document.querySelector(".start-form");
+  const startBtn = startForm.querySelector(".start-form__submit-btn");
+  const subtitle = document.querySelector(".modal-again__subtitle");
 
   let cardsArray = [];
   let prevCard = null;
@@ -55,8 +63,8 @@
 
     const card = document.createElement("li");
     card.classList.add("card");
-    card.style.width = 80 / COL + "vw";
-    card.style.height = 80 / ROW + "vh";
+    card.style.width = 80 / widthGameField + "vw";
+    card.style.height = 80 / heightGameField + "vh";
 
     card.append(cardFront);
     card.append(cardBack);
@@ -105,11 +113,14 @@
     // если игра закончена, показать сообщение через 1 секунду
     if (gameOver()) {
       let list = containerGame.querySelectorAll(".list");
+      let timer = document.querySelector(".timer__counter");
+
+      timer.classList.add("color-orange");
 
       list.forEach(function (el) {
         el.classList.add("finished");
       });
-
+      clearInterval(timerId);
       setTimeout(() => showGameOver(), 1000);
     }
   }
@@ -121,18 +132,17 @@
       if (iCard.opened) openedCardCnt++;
     }
 
-    return openedCardCnt === ROW * COL;
+    return openedCardCnt === heightGameField * widthGameField;
   }
 
   // показать форму "играть еще"
   function showGameOver() {
+    const modalAgain = document.querySelector(".modal-again");
+    const modal = document.querySelector(".modal-again__form");
 
-    const modalAgain = document.querySelector('.modal-again');
-    const modal = document.querySelector('.modal-again__form');
-
-    modalAgain.classList.add('modal-overlay--visible');
-    modal.classList.remove('modal--visible');
-    modal.classList.add('modal--visible');
+    modalAgain.classList.add("modal-overlay--visible");
+    modal.classList.remove("modal--visible");
+    modal.classList.add("modal--visible");
 
     // restartGame();
   }
@@ -144,27 +154,28 @@
   }
 
   function initGame() {
+    modalStart.classList.add("modal-overlay--visible");
+    startForm.classList.add("modal--visible");
 
-    modalStart.classList.add('modal-overlay--visible');
-    startForm.classList.add('modal--visible');
+    startBtn.addEventListener("click", formSubmit);
 
-    startBtn.addEventListener('click', formSubmit);
-
-    againBtn.addEventListener('click', () => {
-      modalAgain.classList.remove('modal-overlay--visible');
-      modal.classList.remove('modal--visible');
+    againBtn.addEventListener("click", () => {
+      modalAgain.classList.remove("modal-overlay--visible");
+      modal.classList.remove("modal--visible");
+      const timer = document.querySelector(".timer__counter");
+      timer.textContent = "";
       restartGame();
-    })
+    });
 
-    shuffle(fillArray(cardsArray, ROW * COL));
+    shuffle(fillArray(cardsArray, heightGameField * widthGameField));
     let cardIndex = 0;
 
-    for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
+    for (let rowIndex = 0; rowIndex < heightGameField; rowIndex++) {
       const cardList = document.createElement("ul");
       cardList.classList.add("list");
       containerGame.append(cardList);
 
-      for (let colIndex = 0; colIndex < COL; colIndex++) {
+      for (let colIndex = 0; colIndex < widthGameField; colIndex++) {
         let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
         cardList.append(card);
       }
@@ -180,22 +191,27 @@
   function restartGame() {
     cardsArray = [];
 
+    timerValue = TIMER_START_VALUE;
+
     prevCard = null;
     prevCardIndex = null;
     containerGame.innerHTML = "";
 
-    modalStart.classList.add('modal-overlay--visible');
-    startForm.classList.add('modal--visible');
+    const timer = document.querySelector(".timer__counter");
+    timer.classList.remove("color-orange");
 
-    shuffle(fillArray(cardsArray, ROW * COL));
+    modalStart.classList.add("modal-overlay--visible");
+    startForm.classList.add("modal--visible");
+
+    shuffle(fillArray(cardsArray, heightGameField * widthGameField));
     let cardIndex = 0;
 
-    for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
+    for (let rowIndex = 0; rowIndex < heightGameField; rowIndex++) {
       const cardList = document.createElement("ul");
       cardList.classList.add("list");
       containerGame.append(cardList);
 
-      for (let colIndex = 0; colIndex < COL; colIndex++) {
+      for (let colIndex = 0; colIndex < widthGameField; colIndex++) {
         let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
         cardList.append(card);
       }
@@ -215,15 +231,15 @@
     prevCardIndex = null;
     containerGame.innerHTML = "";
 
-    shuffle(fillArray(cardsArray, ROW * COL));
+    shuffle(fillArray(cardsArray, heightGameField * widthGameField));
     let cardIndex = 0;
 
-    for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
+    for (let rowIndex = 0; rowIndex < heightGameField; rowIndex++) {
       const cardList = document.createElement("ul");
       cardList.classList.add("list");
       containerGame.append(cardList);
 
-      for (let colIndex = 0; colIndex < COL; colIndex++) {
+      for (let colIndex = 0; colIndex < widthGameField; colIndex++) {
         let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
         cardList.append(card);
       }
@@ -237,15 +253,61 @@
   }
 
   function formSubmit() {
-    modalStart.classList.remove('modal-overlay--visible');
-    startForm.classList.remove('modal--visible');
+    const timer = document.querySelector(".timer__counter");
+    timer.textContent = "";
 
-    const widthSize = startForm.childNodes[3].value;
-    const heightSize = startForm.childNodes[5].value;
-    if (widthSize && heightSize) {
-      ROW = parseInt(widthSize);
-      COL = parseInt(heightSize)
-      redrawField();
+    modalStart.classList.remove("modal-overlay--visible");
+    startForm.classList.remove("modal--visible");
+
+    subtitle.classList.remove("modal-subtitle--visible");
+
+    let widthSize = startForm.childNodes[3].value;
+    let heightSize = startForm.childNodes[5].value;
+
+    startForm.childNodes[3].value = "";
+    startForm.childNodes[5].value = "";
+
+    if (widthSize === "") widthSize = "4";
+    if (heightSize === "") heightSize = "4";
+
+    widthGameField = parseInt(widthSize);
+    heightGameField = parseInt(heightSize);
+
+    if (
+      !(widthGameField >= 2 && widthGameField <= 10 && !(widthGameField & 1))
+    ) {
+      widthGameField = 4;
+    }
+
+    if (
+      !(heightGameField >= 2 && heightGameField <= 10 && !(heightGameField & 1))
+    ) {
+      heightGameField = 4;
+    }
+
+    redrawField();
+
+    clearInterval(timerId);
+    timerId = setInterval(updateTimer, 1000);
+  }
+
+  function updateTimer() {
+    const timer = document.querySelector(".timer__counter");
+    timer.textContent = --timerValue;
+
+    if (timerValue <= 0) {
+      let list = containerGame.querySelectorAll(".list");
+      let timer = document.querySelector(".timer__counter");
+
+      subtitle.classList.add("modal-subtitle--visible");
+
+      timer.classList.add("color-orange");
+
+      list.forEach(function (el) {
+        el.classList.add("finished");
+      });
+      clearInterval(timerId);
+      setTimeout(() => showGameOver(), 1000);
     }
   }
 
