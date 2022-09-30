@@ -1,14 +1,20 @@
 (() => {
-  // const PAIRS_OF_NUMBERS = 8;
   let ROW = 2;
   let COL = 2;
 
-  const container = document.querySelector(".container");
-  let cardsArray = [];
+  const containerGame = document.querySelector(".container__game");
+  const againBtn = document.querySelector('.modal-again__sumbit-btn');
+  const modalAgain = document.querySelector('.modal-again');
+  const modal = document.querySelector('.modal-again__form');
+  const modalStart = document.querySelector('.modal-start');
+  const startForm = document.querySelector('.start-form');
+  const startBtn = startForm.querySelector('.start-form__submit-btn');
 
+  let cardsArray = [];
   let prevCard = null;
   let prevCardIndex = null;
 
+  // заполнить и вернуть массив парами цифр (попорядку)
   function fillArray(arr, totalItems) {
     for (let index = 1; index <= totalItems / 2; index++) {
       arr.push({ suit: index, opened: false });
@@ -17,6 +23,7 @@
     return arr;
   }
 
+  // перемешать и вернуть заполненный массив
   function shuffle(array) {
     let currentIndex = array.length,
       randomIndex;
@@ -33,6 +40,7 @@
     return array;
   }
 
+  // создать и вернуть карту
   function createCard(cardSuit, cardCurrentIndex) {
     const cardFront = document.createElement("div");
     cardFront.classList.add("card__front");
@@ -40,7 +48,6 @@
     const cardBack = document.createElement("div");
     cardBack.classList.add("card__back");
     cardBack.textContent = cardSuit;
-    // cardBack.style.fontSize = 100 / (COL + 1) + "vh";
 
     const cardIndex = document.createElement("div");
     cardIndex.classList.add("card__index");
@@ -60,12 +67,11 @@
     return card;
   }
 
+  // click по карте
   function cardClick() {
     const curCardIndex = parseInt(this.childNodes[2].textContent);
-    // console.log(`card index: ${curCardIndex}`);
     if (this.classList.contains("card--open")) return;
 
-    // совпала с предыдущей - оставить открытой
     if (
       prevCard !== null &&
       parseInt(prevCard.childNodes[1].textContent) ===
@@ -96,18 +102,19 @@
       prevCardIndex = curCardIndex;
     }
 
+    // если игра закончена, показать сообщение через 1 секунду
     if (gameOver()) {
-      let list = container.querySelectorAll(".list");
+      let list = containerGame.querySelectorAll(".list");
 
       list.forEach(function (el) {
         el.classList.add("finished");
       });
-      // list.classList.add("finished");
 
       setTimeout(() => showGameOver(), 1000);
     }
   }
 
+  // проверить закончена ли игра
   function gameOver() {
     let openedCardCnt = 0;
     for (let iCard of cardsArray) {
@@ -117,72 +124,17 @@
     return openedCardCnt === ROW * COL;
   }
 
-  function createGameOverBlock() {
-    const gameOverBlock = document.createElement("div");
-    gameOverBlock.classList.add("block__game-over");
-
-    const gameOverTitle = document.createElement("h1");
-    gameOverTitle.classList.add("title__game-over");
-    gameOverTitle.textContent = "Игра окончена!";
-
-    const gameOverBtn = document.createElement("button");
-    gameOverBtn.classList.add("btn__game-over");
-    gameOverBtn.type = "submit";
-    gameOverBtn.textContent = "Сыграть еще раз";
-    gameOverBtn.addEventListener("click", restartGame);
-
-    gameOverBlock.append(gameOverTitle);
-    gameOverBlock.append(gameOverBtn);
-    return gameOverBlock;
-  }
-
-  function createStartForm() {
-    const formLegend = document.createElement('legend');
-    formLegend.classList.add('form__legend');
-    formLegend.textContent = 'Задайте размер игрового поля:';
-
-    const inputHorizontal = document.createElement('input');
-    inputHorizontal.classList.add('horizontal');
-    inputHorizontal.name = 'horizontal';
-    inputHorizontal.type = 'number';
-    inputHorizontal.placeholder = 'По горизонтали';
-
-    const inputVertical = document.createElement('input');
-    inputVertical.classList.add('vertical');
-    inputVertical.name = 'vertical';
-    inputVertical.type = 'number';
-    inputVertical.placeholder = 'По вертикали';
-
-    const formBtn = document.createElement('button');
-    formBtn.classList.add('form__btn');
-    formBtn.type = 'submit';
-    formBtn.textContent = 'Играть';
-
-    const form = document.createElement('form');
-    form.classList.add('form');
-    form.id = 'form';
-    form.action = '#';
-    form.addEventListener('submit', initGame);
-
-    form.append(formLegend);
-    form.append(inputHorizontal);
-    form.append(inputVertical);
-    form.append(formBtn);
-
-    return form;
-  }
-
-  function getStartData() {
-    const startForm = createStartForm();
-    container.append(startForm)
-    COL = parseInt(startForm.horizontal.value);
-    ROW = parseInt(startForm.vertical.value);
-    return { 'hor': COL, 'vert': ROW };
-  }
-
+  // показать форму "играть еще"
   function showGameOver() {
-    let gameOverForm = createGameOverBlock();
-    container.append(gameOverForm);
+
+    const modalAgain = document.querySelector('.modal-again');
+    const modal = document.querySelector('.modal-again__form');
+
+    modalAgain.classList.add('modal-overlay--visible');
+    modal.classList.remove('modal--visible');
+    modal.classList.add('modal--visible');
+
+    // restartGame();
   }
 
   function getFontSize() {
@@ -192,7 +144,17 @@
   }
 
   function initGame() {
-    console.log(getStartData());
+
+    modalStart.classList.add('modal-overlay--visible');
+    startForm.classList.add('modal--visible');
+
+    startBtn.addEventListener('click', formSubmit);
+
+    againBtn.addEventListener('click', () => {
+      modalAgain.classList.remove('modal-overlay--visible');
+      modal.classList.remove('modal--visible');
+      restartGame();
+    })
 
     shuffle(fillArray(cardsArray, ROW * COL));
     let cardIndex = 0;
@@ -200,7 +162,7 @@
     for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
       const cardList = document.createElement("ul");
       cardList.classList.add("list");
-      container.append(cardList);
+      containerGame.append(cardList);
 
       for (let colIndex = 0; colIndex < COL; colIndex++) {
         let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
@@ -209,7 +171,7 @@
     }
 
     const fSize = getFontSize();
-    const x = container.querySelectorAll(".card__back");
+    const x = containerGame.querySelectorAll(".card__back");
     x.forEach(function (el) {
       el.style.fontSize = fSize;
     });
@@ -220,10 +182,71 @@
 
     prevCard = null;
     prevCardIndex = null;
-    container.innerHTML = "";
-    const startForm = createStartForm();
-    container.append(startForm)
-    initGame();
+    containerGame.innerHTML = "";
+
+    modalStart.classList.add('modal-overlay--visible');
+    startForm.classList.add('modal--visible');
+
+    shuffle(fillArray(cardsArray, ROW * COL));
+    let cardIndex = 0;
+
+    for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
+      const cardList = document.createElement("ul");
+      cardList.classList.add("list");
+      containerGame.append(cardList);
+
+      for (let colIndex = 0; colIndex < COL; colIndex++) {
+        let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
+        cardList.append(card);
+      }
+    }
+
+    const fSize = getFontSize();
+    const x = containerGame.querySelectorAll(".card__back");
+    x.forEach(function (el) {
+      el.style.fontSize = fSize;
+    });
+  }
+
+  function redrawField() {
+    cardsArray = [];
+
+    prevCard = null;
+    prevCardIndex = null;
+    containerGame.innerHTML = "";
+
+    shuffle(fillArray(cardsArray, ROW * COL));
+    let cardIndex = 0;
+
+    for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
+      const cardList = document.createElement("ul");
+      cardList.classList.add("list");
+      containerGame.append(cardList);
+
+      for (let colIndex = 0; colIndex < COL; colIndex++) {
+        let card = createCard(cardsArray[cardIndex].suit, cardIndex++);
+        cardList.append(card);
+      }
+    }
+
+    const fSize = getFontSize();
+    const x = containerGame.querySelectorAll(".card__back");
+    x.forEach(function (el) {
+      el.style.fontSize = fSize;
+    });
+  }
+
+  function formSubmit() {
+    modalStart.classList.remove('modal-overlay--visible');
+    startForm.classList.remove('modal--visible');
+
+    const widthSize = startForm.childNodes[3].value;
+    const heightSize = startForm.childNodes[5].value;
+    if (widthSize && heightSize) {
+      ROW = parseInt(widthSize);
+      COL = parseInt(heightSize)
+      redrawField();
+    }
   }
 
   initGame();
