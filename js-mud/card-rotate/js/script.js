@@ -159,6 +159,28 @@
 
     startBtn.addEventListener("click", formSubmit);
 
+    const inpHor = startForm.querySelector(".start-form__hor_size");
+    inpHor.addEventListener("input", () => {
+      if (parseInt(inpHor.value) > 10) {
+        inpHor.value = 10;
+        return false;
+      } else if (parseInt(inpHor.value) < 2 || inpHor.value === "") {
+        inpHor.value = 2;
+        return false;
+      }
+    });
+
+    const inpVert = startForm.querySelector(".start-form__vert_size");
+    inpVert.addEventListener("input", () => {
+      if (parseInt(inpVert.value) > 10) {
+        inpVert.value = 10;
+        return false;
+      } else if (parseInt(inpVert.value) < 2 || inpVert.value === "") {
+        inpVert.value = 2;
+        return false;
+      }
+    });
+
     againBtn.addEventListener("click", () => {
       modalAgain.classList.remove("modal-overlay--visible");
       modal.classList.remove("modal--visible");
