@@ -970,17 +970,19 @@ body > main > div.events > div > div > div > div.swiper-pagination.events__swipe
 }
 
 .projects__descr {
-  font-size: 16px;
+  font-size: 15.98px;
   font-weight: 400;
   line-height: 32px;
   color: var(--dark-color);
 }
 
 .projects__link {
+  display: inline-block;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
   color: var(--link-color);
+  margin-bottom: 51px;
 }
 
 .projects__partner-title {
@@ -988,6 +990,7 @@ body > main > div.events > div > div > div > div.swiper-pagination.events__swipe
   font-weight: 600;
   line-height: 32px;
   color: var(--dark-color);
+  margin-bottom: 11px;
 }
 
 .projects__swiper-wrapper {
@@ -1005,6 +1008,21 @@ body > main > div.events > div > div > div > div.swiper-pagination.events__swipe
 
 .projects__swiper-button-next::after {
   content: '';
+}
+
+.tippy-marker {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../img/tooltip.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateY(3px);
+  transition: background-image .3s ease-in-out;
+}
+
+.tippy-marker:hover {
+  background-image: url('../img/tooltip-hover.png');
 }
 
 /* ------------------------------------- */
