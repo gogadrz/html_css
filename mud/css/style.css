@@ -1,7 +1,3 @@
-:root {
-
-}
-
 html {
   box-sizing: border-box;
 }
@@ -20,10 +16,6 @@ a {
 
 img {
   max-width: 100%;
-}
-
-body {
-
 }
 
 /* global */
@@ -71,31 +63,45 @@ body {
   position: relative;
 }
 
-.marker {
-  position: relative;
+.tooltip__marker {
+  /* display: inline-block; */
+  /* position: relative; */
   width: 16px;
   height: 16px;
   cursor: pointer;
   background-image: url('../img/tooltip.png');
+  transition: background-image .3s ease-in-out;
 }
 
-.marker:focus-visible + .popup,
-.marker:hover + .popup {
+.tooltip__marker--hover {
+  background-image: url('../img/tooltip-hover.png');
+}
+
+/* .tooltip__marker:focus-visible + .tooltip__popup,
+.tooltip__marker:hover + .tooltip__popup { */
+
+.tooltip__popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  /* margin-top: 10px; */
+  background: black;
+  color: white;
+  max-width: 280px;
+  padding: 15px;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .3s ease-in-out, z-index .3s ease-in-out;
+}
+
+.tooltip__popup--show {
   opacity: 1;
   z-index: 1;
 }
 
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-top: 10px;
-  background: black;
-  color: white;
-  width: 250px;
-  padding: 15px;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-  z-index: -1;
+.tooltip__popup-content {
+  text-align: center;
 }
