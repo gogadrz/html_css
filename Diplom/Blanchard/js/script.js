@@ -94,6 +94,23 @@ const projectsSwiper = new Swiper(".projects__swiper", {
   },
 });
 
+// поправить высоту блоков свайпера в событиях
+let slide = document.querySelectorAll(".events__swiper-slide");
+let maxSlideHeight = 0;
+
+slide.forEach(function (elem) {
+  // console.log(elem, elem.clientHeight);
+  if (elem.clientHeight > maxSlideHeight) {
+    maxSlideHeight = elem.clientHeight;
+  }
+  // console.log("самый высокий блок:", maxSlideHeight);
+});
+// console.log("---------------------------------------------");
+slide.forEach(function (elem) {
+  // console.log(elem, maxSlideHeight + "px");
+  elem.style.height = maxSlideHeight + "px";
+});
+
 // yandex map
 ymaps.ready(init);
 function init() {
@@ -112,20 +129,3 @@ function init() {
 //           // searchControlProvider: 'yandex#search'
 //       });
 // });
-
-// поправить высоту блоков свайпера в событиях
-let slide = document.querySelectorAll(".events__swiper-slide");
-let maxSlideHeight = 0;
-
-slide.forEach(function (elem) {
-  console.log(elem, elem.clientHeight);
-  if (elem.clientHeight > maxSlideHeight) {
-    maxSlideHeight = elem.clientHeight;
-  }
-  console.log("самый высокий блок:", maxSlideHeight);
-});
-console.log("---------------------------------------------");
-slide.forEach(function (elem) {
-  console.log(elem, maxSlideHeight + "px");
-  elem.style.height = maxSlideHeight + "px";
-});
