@@ -1,37 +1,75 @@
 (() => {
-  const bodyPos = document.querySelector("body");
+  const markerDistance = 10;
+  const horizontalMargins = 20;
+  const minVerticalOffset = 10;
 
-  // let sizeViewport = bodyPos.getBoundingClientRect();
+  const markers = document.querySelectorAll(".tooltip__marker");
+  markers.forEach((marker) => {
+    // mouseout -------------------------------------------------
+    marker.addEventListener("mouseout", (mouseOutEvent) => {
+      const marker = mouseOutEvent.currentTarget;
+      const popup = mouseOutEvent.currentTarget.nextElementSibling;
+      popup.classList.remove("tooltip__popup--show");
+      marker.classList.remove("tooltip__marker--hover");
+    });
 
-  console.log(`width: ${window.screen.width}`);
-  console.log(`height: ${window.screen.height}`);
+    // wheel ----------------------------------------------------
+    marker.addEventListener("wheel", (wheelEvent) => {
+      const marker = wheelEvent.currentTarget;
+      const popup = wheelEvent.currentTarget.nextElementSibling;
+      console.log(popup);
+      popup.classList.remove("tooltip__popup--show");
+      marker.classList.remove("tooltip__marker--hover");
+    });
 
-  console.log(`available w: ${window.screen.availWidth}`);
-  console.log(`available h: ${window.screen.availHeight}`);
+    // mouseover ------------------------------------------------
+    marker.addEventListener("mouseover", (ev) => {
+      const marker = ev.currentTarget;
+      const popup = ev.currentTarget.nextElementSibling;
+      const popupMaxWidth = window.screen.availWidth - horizontalMargins * 2;
+      const screenWidth = window.screen.availWidth;
 
-  const popupMargin = 30;
-  const popup = document.querySelector(".popup");
-  const marker = document.querySelector(".marker");
-  console.log(`marker: ${marker.clientY}`);
+      let markerCoords = marker.getBoundingClientRect();
+      let popupCoords = popup.getBoundingClientRect();
 
-  const { width, height } = popup.getBoundingClientRect();
-  console.log(`ширина popup: ${width}, высота: ${height}`);
-  // console.log(bodyPos);
+      let popupWidth = popupCoords.width;
 
-  marker.addEventListener("mouseover", function (event) {
-    // let markerCoords = event.currentTarget;
+      // Y
+      let popupY = markerCoords.top - popupCoords.height - markerDistance;
 
-    let xOffset = event.clientX;
-    let yOffset = event.clientY;
+      if (popupY < minVerticalOffset) {
+        popupY = markerCoords.bottom + markerDistance;
+      }
 
-    let pupupX = xOffset;
-    let popupY = yOffset;
+      // X
+      // если требуется - уменьшим ширину popup
+      if (popupWidth > popupMaxWidth) {
+        popupWidth = popupMaxWidth;
+      }
+      console.log("--------------------");
+      console.log(`максимальная ширина popup: ${popupMaxWidth}`);
+      console.log(`ширина popup: ${popupWidth}`);
 
-    // console.log(`marker: ${markerCoords.clientX}, ${markerCoords.clientY}`);
-    console.log(`mouse: (left-${xOffset}, top-${yOffset})`);
-    popupY = parseInt(yOffset - height - popupMargin) + "px";
-    console.log(popupY);
+      // установить X
+      let popupX = markerCoords.left - popupWidth / 2;
+      console.log(`отступ слева: ${popupX} `);
+      if (popupX < horizontalMargins) {
+        popupX = horizontalMargins;
+      }
+      console.log(`отсутп после корректировки: ${popupX}`);
 
-    popup.style.top = popupY;
+      if (popupX + popupWidth > screenWidth - horizontalMargins) {
+        popupX = screenWidth - popupWidth - horizontalMargins;
+      }
+      console.log(`отступ после проверки на выход из диапазона: ${popupX}`);
+      console.log(`и ширина: ${popupWidth}`);
+
+      popup.style['left'] = popupX + "px";
+      popup.style['top'] = popupY + "px";
+      popup.style['max-width'] = popupWidth + "px";
+
+      popup.classList.add("tooltip__popup--show");
+      marker.classList.add("tooltip__marker--hover");
+    });
   });
 })();

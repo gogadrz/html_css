@@ -115,11 +115,30 @@ slide.forEach(function (elem) {
 ymaps.ready(init);
 function init() {
   var myMap = new ymaps.Map("map-1", {
-    center: [55.76, 37.64],
-    zoom: 7,
+    center: [55.75912156895556,37.61443749999993],
+    zoom: 13.5,
     controls: [],
   });
+
+  // var myGeoObject = new ymaps.GeoObject({
+  //   geometry: {
+  //     type: "Circle", // тип геометрии - точка
+  //     coordinates: [55.75912156895556,37.61443749999993], // координаты точки
+  //     radius: 100,
+  //   }
+  // });
+
+  var myPointer = new ymaps.Placemark([55.75912156895556,37.61443749999993], {}, {
+    iconLayout: 'default#image',
+    iconImageHref: '../img/map-pointer-mobile.png',
+    iconImageSize: [20, 20],
+    iconImageOffset: [-10, -10],
+  });
+
+  myMap.geoObjects.add(myPointer);
 }
+
+
 // ymaps.ready(function () {
 //   var myMap = new ymaps.Map('map', {
 //           center: [55.751574, 37.573856],
