@@ -1,0 +1,30 @@
+.container {
+  padding: 30px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 185px;
+  height: 85px;
+}
+.input {
+  position: relative;
+  top: 0;
+  left: 0;
+  outline: none;
+  border: none;
+}
+.input:focus+.underline {
+  border-color: rgb(255,0,0);
+}
+.input:hover:not(:focus)+.underline {
+  border-color: rgba(255,0,0,.5);
+}
+
+.underline {
+  position: relative;
+  bottom: -2px;
+  left: 0;
+  border-bottom: 2px solid gray;
+
+}
