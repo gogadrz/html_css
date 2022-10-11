@@ -1,0 +1,50 @@
+.container {
+  padding: 30px;
+  background-color: rgba(0,0,0,.3);
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.input-wrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  /* outline: 1px dotted black; */
+}
+
+.input-text {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid black;
+}
+.input-text:hover:not(:focus)+.underline {
+  border-color: tomato;
+}
+.btn:hover:not(.nohover):not(:focus)+.input-text+.underline {
+  border-color: tomato;
+}
+
+.input-text:focus::placeholder {
+  color: transparent;
+}
+.input-text:focus+.underline {
+  border-color: red;
+/*   color: white;   */
+}
+
+.bcolor {
+  border-color: red;
+}
