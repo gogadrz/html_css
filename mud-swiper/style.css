@@ -1,0 +1,29 @@
+.container {
+  width: 288px;
+  margin: 0 auto;
+}
+
+.events__swiper {
+  /* outline: 1px solid tomato; */
+  background-color: tomato;
+}
+
+.events__swiper-slide {
+  outline: 1px solid green;
+  height: auto;
+}
+
+.events__descr-wrapper {
+  background-color: orangered;
+}
+
+/* .events__descr-wrapper > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+.events__link {
+  position: fixed;
+  bottom: 10px;
+}
